@@ -147,7 +147,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ietroboticsclub@gmail.com'
-EMAIL_HOST_PASSWORD = '@ADM!n2018'
+EMAIL_HOST_PASSWORD = ''
 log = logging.getLogger(__name__)
 
 # the minimum reported level
