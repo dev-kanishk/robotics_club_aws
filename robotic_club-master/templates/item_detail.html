@@ -1,0 +1,33 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+ <a href="{{item.id}}"><img src="{{item.photo1.url}}" class="im" } ></a>
+ <br>
+ {{item.text}}
+ {{item.amount}}
+ <br><br>
+ 
+
+
+
+<form method = "POST">
+
+	
+{% csrf_token%}
+<input type="number" name="amount">
+<input type="hidden" value="{{item.pk}}" name="item">
+<input type="submit" value="add to cart" name="upload_offer">
+
+</form>
+
+
+
+<!-- <a href="delete"> delete</a> -->
+
+
+
+
+{% endblock %}

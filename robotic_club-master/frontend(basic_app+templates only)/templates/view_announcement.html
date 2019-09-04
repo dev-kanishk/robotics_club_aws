@@ -1,0 +1,42 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+<body class="ancontent">
+	<div class="container-fluid">
+		<div class="mx-auto " style="padding-left:40px;"><h1 class="display-4 mx-auto">Announcement</h1></div>
+
+	  <div class="row" style="margin: 20px; box-shadow: 3px 3px 5px grey;" >
+	   <div class="col-12 h11" style="background-color: rgba(185, 185, 185, 0.199)"><h2 class="display-5">-Heading</h2></div>
+	   <div class="hr"style=" border-bottom: 1.5px solid rgba(200, 200, 200, 0.767); width:100%;"></div>
+
+	   <h5 class="col-12">-Author (Date)</h5>
+	   <button class="btn btn-light"style="margin:1rem;"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
+	  </div>
+	</div>
+	<hr style="border-width: 3px; border-color: rgba(200, 200, 200, 0.767); margin-top: 60px;">
+	<form action="/action_page.php" style="padding: 1.5rem;">
+	  <h3 class='display-4' style="padding-left: 15px;">Make Announcement</h3>
+	  <div class="form-group" >
+		<input type="text" class="form-control" name="subject" placeholder="Subject"><br>
+		<textarea class="form-control" rows="5" id="comment" name="text" placeholder="Description"></textarea>
+	  </div>
+	  <button class="btn btn-outline-dark" type="button">Submit</button>
+	</form>
+  </body>
+{% block body_block %}
+
+	{% for notification in notifications %}
+	<div>
+	{% if notification.read %}
+	<a href="{{notification.pk}}" style="color: #A9A9A9">{{notification.subject}}</a><hr>
+	
+	{% else %}
+	<a href="{{notification.pk}}" style="color: black">{{notification.subject}}</a><hr>
+	{%endif%}
+
+
+
+</div>
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Robotics club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+	<!-- Latest compiled and minified CSS -->
+	    
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/x.y.z/underscore-min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <header style="overflow: hidden;">
+        <div id="logoarea" class="container-fluid" style="padding:0px;background-image: url('/static/images/temple.svg'); background-color: rgb(0, 0, 0);">
+          <div class="row" style="height:100%;">
+          <div class="col row"style="background-color: #000000;">
+              <img class="img-fluid" id="logo" style="margin-left: 25px; position: absolute;" src="{%static "/images/logo.png" %}" alt="logo">
+          </div>
+          <div class="col"style="height:100%;
+          background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0))!important;"></div>
+          </div>
+            </div>
+          <div id="name">IET Lucknow Robotics Club</div>
+</header>
+   
+         <div id="sticky" class="sticky-top container-fluid" style="background-color: rgb(255, 255, 255);box-shadow: 3px 3px 5px grey;">
+          <div class="row">
+                <nav class="col navbar navbar-expand-md navbar-light">   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>   
+                <div class="collapse navbar-collapse text" id="collapsibleNavbar" >
+                                <ul class="navbar-nav">
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'index_page' %}">HOME</a></li>
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'basic_app:achievements' %}">ACHIEVEMENTS</a></li>
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'basic_app:gallery' %}">GALLERY</a></li> 
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'basic_app:team' %}">TEAM</a></li>  
+                                  
+                                  {% if user.is_authenticated %} 
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'basic_app:view_announcements' %}">ANNOUNCEMENTS</a></li>
+                                  <li class="nav-item"><a class="nav-link w3-text-black w3-hover-text-white w3-hover-black" href="{% url 'basic_app:item_view' %}">STORE</a></li>
+                                  {% endif %}
+                                </ul>
+              </div>  
+
+              </nav>
+              <div class="col clearfix">
+                {% if user.is_authenticated %}
+                <span class="float-right" style="width:94px; font-size:13px;margin-top:6px; font-weight: bold;">
+                <a id="logout" href="/index/user_logout/" class="nav-link float-right"> 
+                 <!-- $(event.target).data("rowid")r -->
+                 <i class="fas fa-sign-out-alt"></i> logout
+                </a></span>
+                <span class="float-right">
+                <a id="cart" class="nav-link" style="width:81px; font-size:13px; margin-top:6px; font-weight: bold;" href="{% url 'basic_app:request_mentor' %}">
+                  <i class="fas fa-shopping-cart" aria-hidden="true"></i> Cart</a></span>
+                {% else %}
+                <span class="float-right" style="width:94px; font-size:13px;margin-top:6px; font-weight: bold;">
+                <a id="login" class="nav-link col" href="#"
+                onclick="function1()">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> SignIn
+                </a></span>
+                <span class="float-right" style="width:102px; font-size:13px;margin-top:6px; font-weight: bold;">
+                  <a id="register" class="nav-link col" href="#"
+                  onclick="function2()">
+                  <i class="fas fa-user-plus" aria-hidden="true"></i> SignUp</a></span>
+                {% endif %}
+              </div>
+            </div>
+              </div>
+                <div id="id01" class="modal">
+
+                                <form class="modal-content animate" method="POST" >
+                                  <div class="imgcontainer">
+                                    <span onclick="closemodal(document.getElementById('id01'))" class="close" title="Close Modal">&times;</span>
+                                    <img src="{% static "images/333.svg" %}" alt="Avatar" class="avatar">
+                                  </div>
+                              
+                                  <div class="container">    {% csrf_token %} 
+
+                                    <label for="username"><b>Username</b></label>
+                                    <input type="text" id="username" placeholder="Enter Username" name="username" required>
+                              
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" id="password" placeholder="Enter Password" name="password" required>
+                                      
+                                    <button type="submit" id="submit1">Login</button>
+                                    <label>
+                                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                  </div>
+                              
+                                  <div class="container" style="background-color:#f1f1f1">
+                                    <button type="button" onclick="closemodal(document.getElementById('id01'))" class="cancelbtn">Cancel</button>
+                                    <span class="psw"><a href="#">Forgot password?</a></span>
+                                  </div>
+                                </form>
+                              </div>
+                              
+      
+<div id="id02" class="modal2">
+  <span onclick="closemodal(document.getElementById('id02'))" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+          <h1 style="color:rgb(255, 0, 0);"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign Up</h1>
+</div>
+<div class="col-sm" style="text-align: center;padding-top:20px;">
+<h4>Already have an account? <a href="#" style="text-decoration: none;" onclick="function1()">SignIn </a></h4>
+</div>
+</div>
+<p style="color:rgb(65, 183, 223);">Please fill in this form to create an account.</p>
+
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm">
+  <label for="fullname"><b><i class="fa fa-user" aria-hidden="true" ></i>
+  First Name</b></label><br>
+<input type="text" placeholder="First Name" id="first_name" required ><br>
+<label for="fullname"><b><i class="fa fa-user" aria-hidden="true"></i>
+  last Name</b></label><br>
+<input type="text" placeholder="Last Name" id="last_name" required ><br>
+<label for="fullname"><b><i class="fa fa-user" aria-hidden="true"></i>
+  User Name</b></label><br>
+<input type="text" placeholder="Username" id="username1" required ><br>
+<div id="validate_username"></div>
+<label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+   Password</b></label><br>
+<input type="password" placeholder="Enter Password" id="password1" required>
+Password should be of least 8 char and can't be entirely numeric<br><br>
+	<label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+	
+   Confirm Password</b></label><br>
+<input type="password" placeholder="Enter Password" id="password2" required><br>
+
+  
+</div>
+<div class="col-sm">
+
+<label for="email"><b>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    Email</b></label><br>
+<input type="email"  placeholder="Enter Email" id="email" style="  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  " required><br>
+<label for="mobnum"><b><i class="fas fa-phone-square" aria-hidden="true"></i>
+    Mobile Number</b></label><br>
+
+<input type="text" placeholder="Mobile number" id="mobile_no" required><br>
+<label for="Token"><b>
+    <i class="fas fa-user-edit" aria-hidden="true"></i>
+    Token</b></label><br>
+<input type="Text" placeholder="Token" id="reg_token"><br>
+<label for="branch"><b>
+    <i class="fa fa-sitemap" aria-hidden="true"></i>
+    Branch</b> </label><br>
+      <select class="form-control" id="branch" style="height: 55px;">
+        <option value="Computer Science">Computer Science</option>
+        <option value="Electronic and Communication">Electronic and Communication</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Electrical Engineering">Electrical Engineering</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Electronic and Instrument">Electronic and Instrument</option>
+        <option value="Information and Technology">Information and Technology</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+      </select><br>
+      <label for="rollno" ><i class="fa fa-hashtag" aria-hidden="true"></i>
+        Roll No</b></label><br>
+      <input type="text" placeholder="Roll Number" id="roll_no" required><br>
+
+</div>
+</div>
+</div>
+<!-- <label>
+<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+</label> -->
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<div class="clearfix">
+<button style="width: 49%;" type="button" onclick="closemodal(document.getElementById('id02'))" class="cancelbtn">Cancel</button>
+<button style="width: 49%;"type="submit" id="submit_reg" class="signupbtn">Sign Up</button>
+</div>
+</div>
+</form>
+</div>
+
+
+<!-- <script>
+ $(document).ready(function(){
+ $('#request').click(function(){
+  $('#alertsuc').show();
+  });
+  $('#alertclose').click(function(){
+  $('#alertsuc').hide();
+  });
+  $('#cancelreq,#id04 .close').click(function(){
+    $('#alertsuc').css('display', 'none');}
+  );});
+  
+</script> -->
+<script>
+ var modal = document.getElementById('id01');
+ var modal1 = document.getElementById('id02');
+ var modal2 = document.getElementById('id03');
+ var modal3 = document.getElementById('id04');
+ var sticky=document.getElementById('sticky');
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+sticky.style.display = "block";
+
+}
+if (event.target == modal1) {
+  modal1.style.display = "none";
+  sticky.style.display = "block";
+}
+if (event.target == modal2) {
+  modal2.style.display = "none";
+  sticky.style.display = "block";
+}
+if (event.target == modal3) {
+  modal3.style.display = "none";
+  sticky.style.display = "block";
+  $('#alertsuc').css('display', 'none');}
+
+}
+function function1(){
+  modal1.style.display = "none";
+  modal.style.display = "block";
+  sticky.style.display="none";
+}
+function function2(){
+  modal1.style.display = "block";
+  modal.style.display = "none";
+  sticky.style.display="none";
+}
+function closemodal(name){
+  sticky.style.display = "block";
+  name.style.display = "none";
+}
+function openmodal(name){
+  sticky.style.display = "none";
+  name.style.display = "block";
+}
+</script>
+<script>
+    $("#username1").keyup(function () {
+      var username = $(this).val();
+
+      $.ajax({
+        url: '{%url "basic_app:validate_username" %}',
+        data: {
+          'username': username
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            document.getElementById("validate_username").innerHTML="A user with this username already exists.";
+          }
+          else{
+            document.getElementById("validate_username").innerHTML="";
+          }
+        }
+      });
+
+    });
+  </script>
+    <script>
+
+
+
+
+
+
+
+
+
+
+    document.getElementById("submit1").addEventListener("click",function (event) {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      event.preventDefault();
+      var token = '{{csrf_token}}';
+      var modal = document.getElementById('id01');
+
+      $.ajax({
+                headers: { "X-CSRFToken": token },
+        url: '{%url "basic_app:login" %}',
+        type: 'POST',
+        data: {
+          'username': username,
+          'password': password
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.loged_in) {
+            location.replace("/");
+             document.getElementById('login').innerHTML="logout";
+             document.getElementById('login').setAttribute("onclick","");
+             document.getElementById('login').setAttribute("href","http://127.0.0.1:8000/index/user_logout/");
+             
+             
+             document.getElementById('login').id="logout";
+             modal.style.display = "none";
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+
+    });
+  document.getElementById("submit_reg").addEventListener("click",function (event) {
+      var username = document.getElementById('username1').value;
+      var password1 = document.getElementById('password1').value;
+      var password2 = document.getElementById('password2').value;
+      var first_name = document.getElementById('first_name').value;
+      var last_name = document.getElementById('last_name').value;
+      var email = document.getElementById('email').value;
+      var roll_no = document.getElementById('roll_no').value;
+      var mobile_no = document.getElementById('mobile_no').value;
+      var reg_token = document.getElementById('reg_token').value;
+      var e = document.getElementById("branch");
+      var branch = e.value;
+      event.preventDefault();
+      var token = '{{csrf_token}}';
+      var modal = document.getElementById('id02');
+
+      $.ajax({
+                headers: { "X-CSRFToken": token },
+        url: '{%url "basic_app:signup" %}',
+        type: 'POST',
+        data: {
+          'username': username,
+          'password1': password1,
+          'password2': password2,
+          'first_name':first_name,
+          'last_name': last_name,
+          'email':email,
+          'roll_no':roll_no,
+          'mobile_no':mobile_no,
+          'token_got':reg_token,
+          'branch':branch
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.loged_in) {
+            location.replace("");
+             document.getElementById('login').innerHTML="logout";
+             document.getElementById('login').setAttribute("onclick","");
+             document.getElementById('login').setAttribute("href","http://127.0.0.1:8000/index/user_logout/");
+             
+             
+             document.getElementById('login').id="logout";
+             modal.style.display = "none";
+          }
+          else{
+            alert(data.message)
+          }
+        }
+      });
+
+    });
+  
+    
+  </script>
+
+        
+
+
+ <!--nav class="navbar navbar-expand-sm bg-dark navbar-dark " id="navbar">
+  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav ml-auto"  >
+      <li class="nav-item">
+      <a class="nav-link" href="{% url 'index_page' %}">Home</a>
+      </li>
+    {% if user.is_authenticated %}
+                <a id="logout" href="http://127.0.0.1:8000/index/user_logout/" class="w3-text-white nav-link"  >
+                 
+                <i class="fas fa-user-plus"   aria-hidden="true"></i>logout
+</a>
+                {% else %}
+                <a id="login" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> SignIn
+                </a>
+                {% endif %}
+                <a id="register" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id02').style.display='block'">
+                <i class="fas fa-user" aria-hidden="true"></i> Register</a>
+                </div>
+       
+
+ {% if user.is_authenticated %} 
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'basic_app:logout' %}">Logout <i class="fa fa-user"></i></a></li>
+        
+      {% else %}
+        <li class="nav-item"> <a class="nav-link" href="{% url 'basic_app:login' %}">Login <i class="fa fa-user"></i></a></li>
+      {% endif %}
+      
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'basic_app:signup' %}">Register<i class="fa fa-user-plus"></i>
+</a>
+    </li>
+ 
+
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+          More
+        </a>
+        <div class="dropdown-menu" style="right:0; left:auto; margin-top:0.7rem;" aria-labelledby="navbarDropdownMenuLink" >
+          
+          <a class="dropdown-item" href="{% url 'basic_app:achievements' %}">Achievements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:gallery' %}">Gallery</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:team' %}">Team</a>
+          <div class="dropdown-divider"></div>
+          
+          <a class="dropdown-item" href="{% url 'basic_app:announcements' %}">Make Announcements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:view_announcements' %}">View Announcements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:item_view' %}">Store</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:add_item' %}">add_item</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:request_mentor' %}">Cart</a>
+          <div class="dropdown-divider"></div>
+        
+          <a class="dropdown-item" href="{% url 'basic_app:donate' %}">Donate</a>
+        </div>
+      </li>
+
+-->
+
+
+</ul>
+
+</nav>
+<div style="overflow: hidden;">
+    {% block body_block %}
+
+    {% endblock %}
+
+  </div>
+  <footer id="footer" class="footer-1">
+<div class="main-footer widgets-dark typo-light">
+<div class="container">
+<div class="row">
+  
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget subscribe no-box">
+<h5 class="widget-title">Robotics Club IET<span></span></h5>
+<p>To inspire and enable students to explore their creativity and engineering skills through robotics...</p>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Quick Links<span></span></h5>
+<ul class="thumbnail-widget">
+<li>
+<div class="thumb-content"><a href="{% url 'basic_app:gallery' %}">Snaps</a></div> 
+</li>
+<li>
+<div class="thumb-content"><a href="{% url 'basic_app:team' %}">Members</a></div> 
+</li>
+{% if user.is_authenticated %} 
+<li>
+<div class="thumb-content"><a href="{% url 'basic_app:item_view' %}">Equipments</a></div> 
+</li>
+<li>
+<div class="thumb-content"><a  href="{% url 'basic_app:view_announcements' %}">News</a></div>  
+</li>
+{% endif %}
+<li>
+<div class="thumb-content"><a href="{% url 'basic_app:donate' %}">Donate</a></div> 
+</li>
+<li>
+<div class="thumb-content"><a href="{% url 'basic_app:achievements' %}">Success Stories</a></div> 
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Get Started<span></span></h5>
+<p id="get">Get yourself registered and get access to our store..</p>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+
+<div class="widget no-box">
+<h5 class="widget-title">Contact Us<span></span></h5>
+
+<p><a href="mailto:info@domain.com" title="glorythemes" class="email">ietroboticsclub@gmail.com</a></p>
+<ul class="social-footer2">
+<li class=""><a title="youtube" target="_blank" href="https://www.youtube.com/"><img alt="youtube" width="30" height="30" src="data:image/png;base64,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"></a></li>
+<li class=""><a href="https://www.facebook.com/" target="_blank" title="Facebook"><img alt="Facebook" width="30" height="30" src="data:image/png;base64,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"></a></li>
+<li class=""><a href="https://twitter.com" target="_blank" title="Twitter"><img alt="Twitter" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAflJREFUeNrsls+LTWEYxz/XlJHxIxrSnVKzMPkxV8PuosTCbJSYRAkxO1az0iz8BZQNspEfJbGwkZpkgWaakhk2I79KYUFJYoSRPhaexXSdc+45NzUL96m3c3qe5/0+73m/z/s9b0llJmwWM2TNwv934blAWw6MDuA0MAZMALeBnRHrBI4By/+apaaNU+q4ujgjp0t9pp5Xu9WyelB9ot5T36qT6rrauWmA89SH6g11TF2TkjekHk/wL1D71Y/+sUvq+jyFO9QH6kL1iPpKHVBbp+WsikW1pWCU1VvqJ7VaG0/j+B3wHVgLnA3OeoH7wCBQATYA74GvKRgtQBnYDYwW4fiCeqfGt0m9qI6qE+rVjPnbgorEeBbHb4Kf/oT4bHWZOj+j8P6shaVt9bfY7n3AlYT4VMS/ZByzCvC66Dn+BVwDDsV7I1YBRhoRkJPAD2Ac6CtYtCca626jkjkMdAPV6NK8NgAMAZ9TMzKaA3WF+kLdXidv+uhVH6mLsvLyAG0JFbupHlVLdST0ubqjHm7erzig/lTPZeRUo+jhPJhJztXqmZDDYXUkpK8vBWSpeiJkdW9eSpKcrepm9bE6pV5Wt6pLgrd2daW6J1TsaTw7C/QBpYxbZguwEdgFdMV/d06IxyTwITT4OvCy6CEvNa+3zcLNwv/Kfg8AhNLfmymksMYAAAAASUVORK5CYII="></a></li>
+<li class=""><a title="instagram" target="_blank" href="https://www.instagram.com/"><img alt="instagram" width="30" height="30" src="data:image/png;base64,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"></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+  
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<p>Copyright Robotics Club IET © 2019. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

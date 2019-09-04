@@ -1,0 +1,266 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="toolcontent">
+       <div class="container-fluid">
+      <!--SEARCH--> 
+      <!-- <div class="row" style="margin-bottom: 20px;">
+          <div class="col-md-5 search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+      </div> -->
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome To Store !</h1>
+        <p class="lead">Here, you can find the utility tools which you can simply get by requesting it.</p>
+        <hr class="my-4">
+        <p>If you are having some tools, if you would like to share it with your club members. Please upload the product and Necessary Details.<br><br>
+            <button type="button" class="btn btn-primary"
+            onclick="openmodal(document.getElementById('id03'))">Upload Product</button>
+        </p>
+        <div class="col-md-5 float-right">
+         
+        </div>
+      </div>
+       </div>
+      <!--modal>
+                <div style="height: 180px; border:0.5px solid rgb(190, 190, 190)"></div>
+
+      -product-->
+     <div class="w3-container">
+       <div class="row">
+        {% for item in items %}
+         <div class="product w3-col m4 l3" style="padding:15px;">
+          <div style=" box-shadow: 1px 1px 2px grey; padding-top:20px;">
+           <div class="div">
+              <img onclick="openmodal(document.getElementById('id04'))" class="img-fluid img-responsive" src="{{item.photo1.url}}" style="display:block;
+              margin-left: auto; margin-right: auto;
+               width: 250px; height:200px; 
+               border-left: 3px solid rgba(207, 207, 207, 0.479) ;
+              border-top: 3px solid rgba(211, 211, 211, 0.514) ;"
+              value="{{item.id}}">
+           </div>
+           <div class="w3-row" style="color: grey;">
+            <div class="w3-container">
+              <h4 style=" text-align: center;color:rgb(83, 83, 83);">
+                {{item.product_name}}
+              </h4>
+              <div class="w3-row" style="border-top:1px solid rgba(121, 121, 121, 0.733); border-top-width: 80%;padding-top: 10px;">
+            <div class="w3-col s6" style="margin-top: 6px;">
+              <label >Qty: {{item.amount}}</label>
+            </div>
+            <div class="w3-col s6">
+                <!-- <div class="btn btn-light" style="font-size: 15px; padding:3px; color:grey; float:right; 
+                margin-bottom:14px;" onclick="openmodal(document.getElementById('id04'))">View..</div> -->
+            </div>
+            </div>
+            </div>
+           </div>
+          </div>
+
+         </div>
+        
+          
+<!--  {{item.text}}
+ {{item.amount}} -->
+ 
+
+{%endfor%}
+        </div>
+        </div>
+      </div><!--product-->
+        </div><!--toolcontent-->
+</body>
+<script>
+ $(document).ready(function(){
+  $("img").click(function(){
+
+    var id_= $(this).attr("value");
+
+    var url_='{%url "basic_app:item_view" %}'+id_;
+
+    
+    $.ajax({
+               
+        url: url_,
+        type: 'get',
+        
+        dataType: 'json',
+        success: function (data) {
+
+        
+          if (data.working) {
+            document.getElementById("product_name").innerHTML=data.product_name;
+            document.getElementById("product_img").src=data.photo1;
+            document.getElementById("product_description").innerHTML=data.text;
+            document.getElementById("avail").innerHTML = "Available: "+data.amount;
+            document.getElementById("add_to_cart").setAttribute("value",url_);
+
+            
+    $("#id04").css('display','block');
+             
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+  });
+   });
+
+
+
+
+
+//     var link=$(this).attr('src');
+//     $("#id04 img").attr('src',link);
+//     $("#id04").css('display','block');
+
+// if ($('#id04').css('display')== 'none'){
+//     $('#alertsuc').css('display', 'none');}
+    
+
+</script>
+<div id="id03" class="modal3">
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+      <div style="text-align: center;"><h2><i class="fas fa-plus-square"></i> Add Product</h2></div>
+      <!--span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span-->
+      </div>
+      <hr>
+          <label for="uname"><b><i class="fas fa-image"></i> Upload Image</b></label>
+          <input type="file" name="prodimage" style="overflow: hidden;" multiple required>
+  
+          <label for="uname"><b><i class="fas fa-pencil-alt"></i> Product Name</b></label>
+          <input type="text" placeholder="Product Name" name="productname" required>
+          <label for="uname"><b><i class="fas fa-file-alt"></i> Description</b></label>
+          <textarea style="height:200px;" id="productdesc">Description...</textarea>
+          <label for="uname"><b><i class="fas fa-address-book "></i> Contact Name</b></label>
+          <input type="text" placeholder="Contact Name" name="contactname" required>
+          <label for="uname"><b><i class="fas fa-phone-square"></i> Mobile Number</b></label>
+          <input type="text" placeholder="Mobile Number" name="mobnum" >
+          <label for="uname"><b><i class="fas fa-id-card"></i> Address</b></label>
+          <input type="text" placeholder="address" name="contactaddress" required>
+  
+      <div class="container" style="background-color:#f1f1f1;padding:10px; margin-top:10px;">
+        <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-outline-dark" type="submit"style="width:100%; margin-top:5px;" ><a href="#"> Upload</a></button></div>
+
+        <div class="col-sm-3">
+            <button onclick="closemodal(document.getElementById('id03'))" class="btn btn-outline-danger" style="float:right; width:100%;margin-top:5px;">Cancel</button></div>
+
+      </div>
+    </div>
+    </form>
+  </div>
+  <div id="id04" class="modal4">
+
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onclick="closemodal(document.getElementById('id04'))" class="close" title="Close Modal">&times;</span>
+          <img src="images/333.svg" id="product_img" alt="Avatar" class="avatar">
+        </div>
+        <div class="container" style="padding-bottom: 60px;">
+          <h3 style="color:black;" id="product_name">Product Name</h3>
+          <p style="height:200px;width:100%; background-color:#e2e2e2;" id="product_description">Description</p>
+           <p><div id="avail"></div></p>
+          <label for="amount_to_cart">Required</label>
+          <input type="Number" style="width:50px;" id="amount_to_cart" name="amount_to_cart">
+        
+          <div id="alertsuc" class="alert alert-success alert-dismissible" style="display: none; position: absolute;">
+                <strong>Added To Cart</strong>
+            </div>
+        </div>
+    <div class="container" style="background-color:#f1f1f1;padding:10px;">
+            
+            <div class="row">
+            <div class="col-md-3">
+                <span id='add_to_cart' class="btn btn-outline-dark" type="submit"style="width:100%; margin-top:5px;" 
+                ><a> Add to cart</a></span></div>
+    
+            <div class="col-md-3">
+                <span id="cancelreq" onclick="closemodal(document.getElementById('id04'))" class="btn btn-outline-danger" style="float:right; width:100%;margin-top:5px;"
+                >Back</span></div>
+    
+          </div>
+        </div>
+      </form>
+    </div> <!-- $('#alertsuc').show(); -->
+<script>
+ $(document).ready(function(){
+ $('#add_to_cart').click(function(){
+  var token = '{{csrf_token}}';
+  var amount = document.getElementById("amount_to_cart").value;
+  
+  var url_=document.getElementById("add_to_cart").getAttribute("value")+"/";
+  
+ $.ajax({
+    
+        headers: { "X-CSRFToken": token },
+        url: url_,
+        type: 'POST',
+        data: {
+          "amount":amount
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.request) {
+             
+             
+             $('#alertsuc').show();
+             
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+  });
+  $('#alertclose').click(function(){
+  $('#alertsuc').hide();
+  });
+  $('#cancelreq,#id04 .close').click(function(){
+    $('#alertsuc').css('display', 'none');}
+  );});
+  
+</script>
+<script>
+    var modal2 = document.getElementById('id03');
+    var modal3 = document.getElementById('id04');
+    var sticky=document.getElementById('sticky');
+   window.onclick = function(event) {
+   
+   if (event.target == modal2) {
+     sticky.style.display = "block";
+     modal2.style.display = "none";
+   }
+   
+   if (event.target == modal3) {
+     modal3.style.display = "none";
+     sticky.style.display = "block";
+     $('#alertsuc').css('display', 'none');}
+   
+   }
+
+   </script>
+<script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1500
+    });
+    $(function(){
+      $("#ch").load("{% static "modal.html" %}"); 
+    });
+</script>
+
+
+ <!-- <a href="{{item.id}}"><img src="{{item.photo1.url}}" width="42" height="42" } ></a> -->
+
+
+
+{% endblock %}

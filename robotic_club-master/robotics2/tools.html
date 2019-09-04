@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+          <!-- Latest compiled and minified CSS -->
+          <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+          <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+        <header>
+                <div id="logoarea" class="w3-container w3-food-olive">
+                        <img id="logo" src="images/logo.jpeg" alt="logo">
+                        <div id="name"><h3>IET LUCKNOW ROBOTIC'S CLUB</h3></div>
+                </div>
+                <div>   
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>   
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="navbar-nav">
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="home.html">Home</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="index.html">Announcements</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="achievements.html">Achievements</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="gallery.html">Gallery</a></li> 
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="team.html">Team</a></li>  
+                                  <li class="nav-item w3-hover-red w3-food-olive"><a class="nav-link" href="tools.html">Tools</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="donate.html">Donate</a></li>
+                                </ul>
+                </div>  
+                </nav>
+                <div id="ch"></div>
+                <a id="login" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> SignIn
+                </a>
+                <a id="register" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id02').style.display='block'">
+                <i class="fas fa-user" aria-hidden="true"></i> Register</a>
+                </div>
+  </header><!--this is end of a header-->
+        <div class="toolcontent">
+       <div class="container-fluid">
+      <!--SEARCH--> 
+      <div class="row" style="margin-bottom: 20px;">
+          <div class="col-md-5 search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div id="upload" class="col-md-5">
+                <button type="button" class="btn btn-primary"
+                onclick="document.getElementById('id03').style.display='block'">Upload Product</button>
+              </div>
+      </div>
+      <!--modal-->
+     
+      <!--product-->
+      <div class="container-fluid">
+       <div class="prodcont">
+         <div ><img src="images/icon1.svg"></div>
+         <div ><img src="images/icon2.svg"></div>
+         <div ><img src="images/icon3.svg"></div>
+         <div ><img src="images/icon4.svg"></div>
+         <div ><img src="images/icon5.svg"></div>
+         <div ><img src="images/icon6.svg"></div>
+         <div ><img src="images/icon7.svg"></div>
+         <div ><img src="images/icon8.svg"></div>
+         <div ><img src="images/icon9.svg"></div>
+         <div ><img src="images/icon10.svg"></div>
+         <div ><img src="images/icon11.svg"></div>
+
+        </div>
+      </div>
+        </div><!--toolcontent-->
+</body>
+<script>
+ $(document).ready(function(){
+  $(".prodcont img").click(function(){
+    var link=$(this).attr('src');
+    $("#id04 img").attr('src',link);
+    $("#id04").css('display','block');
+
+if ($('#id04').css('display')== 'none'){
+    $('#alertsuc').css('display', 'none');}
+    });
+});
+</script>
+<script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1500
+    });
+    $(function(){
+      $("#ch").load("modal.html"); 
+    });
+</script>
+</html>

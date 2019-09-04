@@ -1,0 +1,240 @@
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+          <!--span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span-->
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="images/333.svg" alt="Avatar" class="avatar">
+      </div>
+      <div style="width:100%;
+       color:rgb(0, 0, 0); text-align: center;"><a href="#" 
+       style="text-decoration: none;" onclick="function2()">Create New <b style="color:red;">Account?</b></a></div>
+      <div class="container">
+        <label for="uname"><b><i class="fa fa-user-circle" aria-hidden="true"></i>
+          Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+          Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit"> Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw"><a href="#">Forgot password?</a></span>
+      </div>
+    </form>
+  </div>
+  
+<div id="id02" class="modal2">
+<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+<form class="modal-content" action="/action_page.php">
+<div class="container">
+<div class="row">
+<div class="col-sm">
+<h1 style="color:rgb(255, 0, 0);"><i class="fa fa-user-plus" aria-hidden="true"></i>
+Sign Up</h1>
+</div>
+<div class="col-sm" style="text-align: center;padding-top:20px;">
+<h4>Already have an account? <a href="#" style="text-decoration: none;" onclick="function1()">SignIn </a></h4>
+</div>
+</div>
+<p style="color:rgb(65, 183, 223);">Please fill in this form to create an account.</p>
+
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm">
+<label for="fullname"><b><i class="fa fa-user" aria-hidden="true"></i>
+  User Name</b></label><br>
+<input type="text" placeholder="Enter Full Name" name="fullname" required><br>
+<label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+   Password</b></label><br>
+<input type="password" placeholder="Enter Password" name="psw" required><br>
+<label for="Rollno"><b>
+    <i class="fa fa-hashtag" aria-hidden="true"></i>
+  Roll No</b></label><br>
+<input type="text" placeholder="Roll Number" name="rollno" required><br>
+<label for="branch"><b>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i> Semester</b> </label><br>
+  <select class="form-control" id="semester">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+  </select><br>
+  <label for="mobnum"><b><i class="fas fa-phone-square" aria-hidden="true"></i>
+    Mobile Number</b></label><br>
+    <input type="text" placeholder="Mobile number" name="mobnum" required><br>
+</div>
+
+<div class="col-sm">
+<label for="email"><b>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    Email</b></label><br>
+<input type="text" placeholder="Enter Email" name="email" required><br>
+
+<label for="psw-repeat"><b>
+    <i class="fa fa-key" aria-hidden="true"></i>Repeat Password</b></label><br>
+<input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+<label for="Token"><b>
+    <i class="fas fa-user-edit" aria-hidden="true"></i>
+    Token</b></label><br>
+<input type="Text" placeholder="Token" name="token"><br>
+<label for="branch"><b>
+    <i class="fa fa-sitemap" aria-hidden="true"></i>
+    Branch</b> </label><br>
+      <select class="form-control" id="branch">
+        <option>Computer Science</option>
+        <option>Electronic and Communication</option>
+        <option>Mechanical Engineering</option>
+        <option>Electrical Engineering</option>
+        <option>Chemical Engineering</option>
+        <option>Electronic and Instrument</option>
+        <option>Information and Technology</option>
+        <option>Civil Engineering</option>
+      </select><br>
+<label for="gender"><b>
+    <i class="fa fa-venus-mars" aria-hidden="true"></i>
+    Gender</b></label><br>
+<div class="form-check-inline">
+<label class="form-check-label">
+<input type="radio" class="form-check-input" name="optradio">Male
+</label>
+</div>
+<div class="form-check-inline">
+<label class="form-check-label">
+<input type="radio" class="form-check-input" name="optradio">Female
+</label>
+</div>
+
+</div>
+</div>
+</div>
+<label>
+<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+</label>
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<div class="clearfix">
+<button style="width: 49%;" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+<button style="width: 49%;"type="submit" class="signupbtn">Sign Up</button>
+</div>
+</div>
+</form>
+</div>
+<div id="id03" class="modal3">
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+      <div style="text-align: center;"><h2><i class="fas fa-plus-square"></i> Add Product</h2></div>
+      <!--span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span-->
+      </div>
+      <hr>
+          <label for="uname"><b><i class="fas fa-image"></i> Upload Image</b></label>
+          <input type="file" name="prodimage" style="overflow: hidden;"required>
+  
+          <label for="uname"><b><i class="fas fa-pencil-alt"></i> Product Name</b></label>
+          <input type="text" placeholder="Product Name" name="productname" required>
+          <label for="uname"><b><i class="fas fa-file-alt"></i> Description</b></label>
+          <textarea style="height:200px;" id="productdesc">Description...</textarea>
+          <label for="uname"><b><i class="fas fa-address-book "></i> Contact Name</b></label>
+          <input type="text" placeholder="Contact Name" name="contactname" required>
+          <label for="uname"><b><i class="fas fa-phone-square"></i> Mobile Number</b></label>
+          <input type="text" placeholder="Mobile Number" name="mobnum" >
+          <label for="uname"><b><i class="fas fa-id-card"></i> Address</b></label>
+          <input type="text" placeholder="address" name="contactaddress" required>
+  
+      <div class="container" style="background-color:#f1f1f1;padding:10px; margin-top:10px;">
+        <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-success" type="submit"style="width:100%; margin-top:5px;" ><a href="#"> Upload</a></button></div>
+
+        <div class="col-sm-3">
+            <button onclick="document.getElementById('id03').style.display='none'" class="btn btn-danger" style="float:right; width:100%;margin-top:5px;">Cancel</button></div>
+
+      </div>
+    </div>
+    </form>
+  </div>
+  <div id="id04" class="modal4">
+
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333.svg" alt="Avatar" class="avatar">
+        </div>
+        <div class="container" style="padding-bottom: 60px;">
+          <h3 style="color:black;">Product Name</h3>
+          <p style="height:200px;width:100%; background-color:#e2e2e2;">Description</p>
+        
+          <div id="alertsuc" class="alert alert-success alert-dismissible" style="display: none; position: absolute;">
+                <strong>Request Successful!</strong>
+            </div>
+        </div>
+    <div class="container" style="background-color:#f1f1f1;padding:10px;">
+            
+            <div class="row">
+            <div class="col-md-3">
+                <span id='request' class="btn btn-success" type="submit"style="width:100%; margin-top:5px;" 
+                ><a> Request</a></span></div>
+    
+            <div class="col-md-3">
+                <span id="cancelreq" onclick="document.getElementById('id04').style.display='none'" class="btn btn-danger" style="float:right; width:100%;margin-top:5px;"
+                >Cancel</span></div>
+    
+          </div>
+        </div>
+      </form>
+    </div>
+<script>
+ $(document).ready(function(){
+ $('#request').click(function(){
+  $('#alertsuc').show();
+  });
+  $('#alertclose').click(function(){
+  $('#alertsuc').hide();
+  });
+  $('#cancelreq,#id04 .close').click(function(){
+    $('#alertsuc').css('display', 'none');}
+  );});
+  
+</script>
+<script>
+ var modal = document.getElementById('id01');
+ var modal1 = document.getElementById('id02');
+ var modal2 = document.getElementById('id03');
+ var modal3 = document.getElementById('id04');
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+if (event.target == modal1) {
+  modal1.style.display = "none";
+}
+if (event.target == modal2) {
+  modal2.style.display = "none";
+}
+if (event.target == modal3) {
+  modal3.style.display = "none";
+  $('#alertsuc').css('display', 'none');}
+
+}
+function function1(){
+  modal1.style.display = "none";
+  modal.style.display = "block";
+}
+function function2(){
+  modal1.style.display = "block";
+  modal.style.display = "none";
+}
+</script>

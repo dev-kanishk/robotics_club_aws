@@ -1,0 +1,257 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+<style>
+            body {
+              font-family: Arial;
+              margin: 0;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            img {
+              vertical-align: middle;
+            }
+            
+            /* Position the image container (needed to position the left and right arrows) */
+            .container {
+              position: relative;
+            }
+            
+            /* Hide the images by default */
+            .mySlides {    
+                        
+              display: none;
+              width: 100%;
+            }
+            
+            /* Add a pointer when hovering over the thumbnail images */
+            .cursor {
+              cursor: pointer;
+              height:100%;margin-left: auto;
+              margin-right: auto;
+              display: block;
+              width: 100%;
+            }
+            #gal{
+             
+                height:400px;  
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            
+            /* Next & previous buttons */
+            .prev,
+            .next {
+              position: absolute;
+              cursor: pointer;
+              top: 220px;
+              
+              width: auto;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 20px;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+              -webkit-user-select: none;
+            }
+            
+            /* Position the "next button" to the right */
+            .next {
+              right: 15px;
+              border-radius: 3px 0 0 3px;
+            }
+            
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+              background-color: rgba(65, 62, 62, 0.8);
+            }
+            
+            /* Number text (1/3 etc) */
+            
+            
+            /* Container for image text */
+            .caption-container {
+              width: 100%;
+              text-align: center ;
+              background-color: rgba(36, 36, 36, 0.829);              
+              padding: 20px;
+              color: white;
+              text-transform: uppercase; 
+              font-weight: bolder; 
+            }
+            
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Six columns side by side */
+            .column {
+              float: left;
+              height:300px;
+              overflow: hidden;
+              background-color: rgba(36, 36, 36, 0.829);              
+            }
+            
+            /* Add a transparency effect for thumnbail images */
+            .demo {
+              opacity: 0.7;
+            }
+            
+            .active,
+            .demo:hover {
+              opacity: 1;
+            }
+            @media screen and (max-width:950px){
+            .prev,
+            .next {
+                top:240px;
+                padding: 12px;
+            }
+            }
+            @media screen and (max-width:768px){
+              .prev,
+            .next {
+                top:335px;
+                padding: 9px;
+            }
+            
+          }
+            @media screen and (max-width:420px){
+              .prev,
+            .next {
+                top:330px;
+                padding: 6px;
+            }
+            
+          
+          }
+            </style>
+            <body>
+            
+            <div class="container-fluid" >
+            <div class="row" style="
+            background-image: url(./images/galback5.jpeg);
+            background-size: cover;
+            background-position-y: -150px;
+            " >
+              <div class="mySlides" >
+                <img src="{%static "/images/gal1.jpeg" %}" id="gal"  alt="New York">              </div>
+            
+              <div class="mySlides">
+                  <img src="{%static "/images/gal2.jpeg" %}" id="gal"  alt="New York">              </div>
+            
+              <div class="mySlides">
+              <img src="{%static "/images/gal3.jpeg" %}"  id="gal"  alt="New York">              </div>
+                
+              <div class="mySlides">
+                <img src="{%static "/images/gal4.jpeg" %}"  id="gal"  alt="New York">              </div>
+            
+              <div class="mySlides">
+                <img src="{%static "/images/mac1.jpeg" %}" id="gal" 
+                 alt="New York">              </div>
+                
+              <div class="mySlides">
+                <img src="{%static "/images/mac2.jpeg" %}"  id="gal"
+                 alt="New York">              </div>
+              <div class="mySlides">
+                <img src="{%static "/images/mac3.jpeg"%}"  id="gal" alt="New York">              </div>
+              
+
+              <div class="mySlides">
+                    <img src="{%static "/images/ach1.jpeg"%}"  id="gal"
+                     alt="New York">              </div>
+              <div class="mySlides">
+                  <img src="{%static "/images/ach2.jpeg" %}"  id="gal" alt="New York">  </div>
+              <div class="mySlides">
+                      <img src="{%static "/images/ach3.jpeg" %}"  id="gal" alt="New York">  </div>
+                
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+            
+              <div class="caption-container"  >
+                  <div id="caption" style="width: 100%;"></div>
+              </div>
+            </div>
+              <div class="row" style="
+              background-image: url("{%static "/images/galback3.jpeg" %}");
+              background-size: cover;
+              background-attachment: fixed;">
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/gal1.jpeg" %}" onclick="currentSlide(1)" alt="Class Room">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/gal2.jpeg" %}" onclick="currentSlide(2)" alt="Aero-modelling Event Parakram">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/gal3.jpeg" %}"   onclick="currentSlide(3)" alt="Team in Action">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/gal4.jpeg" %}" onclick="currentSlide(4)" alt="Drone">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/mac1.jpeg" %}"  onclick="currentSlide(5)" alt="Raspberry Pi cluster based parallel processing technique similar to functionality used in supercomputer">
+                </div>    
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/mac2.jpeg" %}"   onclick="currentSlide(6)" alt="Raspberry Pi based bot for image processing">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/mac3.jpeg" %}"   onclick="currentSlide(7)" alt="Drone enabled with auto-stabilisation">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/ach1.jpeg" %}"  onclick="currentSlide(8)" alt="Finalists of EYRC 2019">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/ach2.jpeg" %}"  onclick="currentSlide(9)" alt="Smart India Hackathon Harsh Jain ">
+                </div>
+                <div class="column col-lg-4 ">
+                    <img class="demo cursor" src="{%static "/images/ach3.jpeg" %}"  onclick="currentSlide(10)" alt="Robowars 2018 IIT Patna">
+                </div>
+              </div>
+            </div>
+            
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            </script>  
+
+
+
+
+{% endblock %}

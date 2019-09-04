@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Robotics club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+	<!-- Latest compiled and minified CSS -->
+	    
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+
+<body>
+        <header>
+                <div id="logoarea" class="w3-container w3-food-cranberry">
+                        <img id="logo" src="{%static "/images/logo.jpeg" %}" alt="logo">
+                        <div id="name"><h3>IET LUCKNOW ROBOTIC'S CLUB</h3></div>
+                </div>
+                <div>   
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>   
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="navbar-nav">
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="home.html"><!-- Home --></a></li>
+                                  <li class="nav-item w3-hover-red w3-food-cranberry"><a class="nav-link" href="index.html"><!-- Announcements --></a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="achievements.html"><!-- Achievements --></a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="gallery.html"><!-- Gallery --></a></li> 
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="team.html"><!-- Team --></a></li>  
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="tools.html"><!-- Tools --></a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="donate.html"><!-- Donate --></a></li>
+                                </ul>
+                </div>  
+                </nav>
+                <!-- {% if user.is_authenticated %}
+                <a id="logout" href="http://127.0.0.1:8000/index/user_logout/" class="w3-text-white nav-link"  > -->
+                  <!-- $(event.target).data("rowid")r
+                <i class="fas fa-user-plus"   aria-hidden="true"></i>logout
+</a>
+                {% else %}
+                <a id="login" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> SignIn
+                </a>
+                {% endif %}
+                <a id="register" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id02').style.display='block'">
+                <i class="fas fa-user" aria-hidden="true"></i> Register</a>
+                </div> -->
+                <div id="id01" class="modal">
+
+                                <form class="modal-content animate" method="POST" >
+                                  <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <img src="images/333.svg" alt="Avatar" class="avatar">
+                                  </div>
+                              
+                                  <div class="container">    {% csrf_token %} 
+
+                                    <label for="username"><b>Username</b></label>
+                                    <input type="text" id="username" placeholder="Enter Username" name="username" required>
+                              
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" id="password" placeholder="Enter Password" name="password" required>
+                                      
+                                    <button type="submit" id="submit1">Login</button>
+                                    <label>
+                                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                  </div>
+                              
+                                  <div class="container" style="background-color:#f1f1f1">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <span class="psw"><a href="#">Forgot password?</a></span>
+                                  </div>
+                                </form>
+                              </div>
+                              
+                              <script>
+                              // Get the modal
+                              var modal = document.getElementById('id01');
+                              
+                              // When the user clicks anywhere outside of the modal, close it
+                              window.onclick = function(event) {
+                                  if (event.target == modal) {
+                                      modal.style.display = "none";
+                                  }
+                              }
+                              </script>
+                              <div id="id02" class="modal2">
+<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+<form class="modal-content" action="/action_page.php">
+<div class="container">
+<div class="row">
+
+<div class="col-sm">
+<h1 style="color:rgb(255, 0, 0);"><i class="fa fa-user-plus" aria-hidden="true"></i>
+Sign Up</h1>
+</div>
+<div class="col-sm" style="text-align: center;padding-top:20px;">
+<h4>Already have an account? <a href="#" style="text-decoration: none;" onclick="function1()">SignIn </a></h4>
+</div>
+</div>
+<p style="color:rgb(65, 183, 223);">Please fill in this form to create an account.</p>
+
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm">
+  <label for="fullname"><b><i class="fa fa-user" aria-hidden="true" ></i>
+  First Name</b></label><br>
+<input type="text" placeholder="First Name" id="first_name" required ><br>
+<label for="fullname"><b><i class="fa fa-user" aria-hidden="true"></i>
+  last Name</b></label><br>
+<input type="text" placeholder="Last Name" id="last_name" required ><br>
+<label for="fullname"><b><i class="fa fa-user" aria-hidden="true"></i>
+  User Name</b></label><br>
+<input type="text" placeholder="Username" id="username1" required ><br>
+<div id="validate_username"></div>
+<label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+   Password</b></label><br>
+<input type="password" placeholder="Enter Password" id="password1" required><br>
+<label for="psw"><b><i class="fa fa-key" aria-hidden="true"></i>
+   Password</b></label><br>
+<input type="password" placeholder="Enter Password" id="password2" required><br>
+
+    <i class="fa fa-hashtag" aria-hidden="true"></i>
+  Roll No</b></label><br>
+<input type="text" placeholder="Roll Number" id="roll_no" required><br>
+
+  
+</div>
+<div class="col-sm">
+
+<label for="email"><b>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    Email</b></label><br>
+<input type="email"  placeholder="Enter Email" id="email" style="  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  
+}" required><br>
+<label for="mobnum"><b><i class="fas fa-phone-square" aria-hidden="true"></i>
+    Mobile Number</b></label><br>
+
+<input type="text" placeholder="Mobile number" id="mobile_no" required><br>
+<label for="Token"><b>
+    <i class="fas fa-user-edit" aria-hidden="true"></i>
+    Token</b></label><br>
+<input type="Text" placeholder="Token" id="reg_token"><br>
+<label for="branch"><b>
+    <i class="fa fa-sitemap" aria-hidden="true"></i>
+    Branch</b> </label><br>
+      <select class="form-control" id="branch">
+        <option value="Computer Science">Computer Science</option>
+        <option value="Electronic and Communication">Electronic and Communication</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Electrical Engineering">Electrical Engineering</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Electronic and Instrument">Electronic and Instrument</option>
+        <option value="Information and Technology">Information and Technology</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+      </select><br>
+
+
+</div>
+</div>
+</div>
+<!-- <label>
+<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+</label> -->
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<div class="clearfix">
+<button style="width: 49%;" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+<button style="width: 49%;"type="submit" id="submit_reg" class="signupbtn">Sign Up</button>
+</div>
+</div>
+</form>
+</div>
+
+
+<!-- <script>
+ $(document).ready(function(){
+ $('#request').click(function(){
+  $('#alertsuc').show();
+  });
+  $('#alertclose').click(function(){
+  $('#alertsuc').hide();
+  });
+  $('#cancelreq,#id04 .close').click(function(){
+    $('#alertsuc').css('display', 'none');}
+  );});
+  
+</script> -->
+<script>
+ var modal = document.getElementById('id01');
+ var modal1 = document.getElementById('id02');
+ var modal2 = document.getElementById('id03');
+ var modal3 = document.getElementById('id04');
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+if (event.target == modal1) {
+  modal1.style.display = "none";
+}
+if (event.target == modal2) {
+  modal2.style.display = "none";
+}
+if (event.target == modal3) {
+  modal3.style.display = "none";
+  $('#alertsuc').css('display', 'none');}
+
+}
+function function1(){
+  modal1.style.display = "none";
+  modal.style.display = "block";
+}
+function function2(){
+  modal1.style.display = "block";
+  modal.style.display = "none";
+}
+</script>
+<script>
+    $("#username1").keyup(function () {
+      var username = $(this).val();
+
+      $.ajax({
+        url: '{%url "basic_app:validate_username" %}',
+        data: {
+          'username': username
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            document.getElementById("validate_username").innerHTML="A user with this username already exists.";
+          }
+          else{
+            document.getElementById("validate_username").innerHTML="";
+          }
+        }
+      });
+
+    });
+  </script>
+    <script>
+
+
+
+
+
+
+
+
+
+
+    document.getElementById("submit1").addEventListener("click",function (event) {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      event.preventDefault();
+      var token = '{{csrf_token}}';
+      var modal = document.getElementById('id01');
+
+      $.ajax({
+                headers: { "X-CSRFToken": token },
+        url: '{%url "basic_app:login" %}',
+        type: 'POST',
+        data: {
+          'username': username,
+          'password': password
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.loged_in) {
+            location.replace("/");
+             document.getElementById('login').innerHTML="logout";
+             document.getElementById('login').setAttribute("onclick","");
+             document.getElementById('login').setAttribute("href","http://127.0.0.1:8000/index/user_logout/");
+             
+             
+             document.getElementById('login').id="logout";
+             modal.style.display = "none";
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+
+    });
+  document.getElementById("submit_reg").addEventListener("click",function (event) {
+      var username = document.getElementById('username1').value;
+      var password1 = document.getElementById('password1').value;
+      var password2 = document.getElementById('password2').value;
+      var first_name = document.getElementById('first_name').value;
+      var last_name = document.getElementById('last_name').value;
+      var email = document.getElementById('email').value;
+      var roll_no = document.getElementById('roll_no').value;
+      var mobile_no = document.getElementById('mobile_no').value;
+      var reg_token = document.getElementById('reg_token').value;
+      var e = document.getElementById("branch");
+      var branch = e.value;
+      event.preventDefault();
+      var token = '{{csrf_token}}';
+      var modal = document.getElementById('id02');
+
+      $.ajax({
+                headers: { "X-CSRFToken": token },
+        url: '{%url "basic_app:signup" %}',
+        type: 'POST',
+        data: {
+          'username': username,
+          'password1': password1,
+          'password2': password2,
+          'first_name':first_name,
+          'last_name': last_name,
+          'email':email,
+          'roll_no':roll_no,
+          'mobile_no':mobile_no,
+          'token_got':reg_token,
+          'branch':branch
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.loged_in) {
+            location.replace("");
+             document.getElementById('login').innerHTML="logout";
+             document.getElementById('login').setAttribute("onclick","");
+             document.getElementById('login').setAttribute("href","http://127.0.0.1:8000/index/user_logout/");
+             
+             
+             document.getElementById('login').id="logout";
+             modal.style.display = "none";
+          }
+          else{
+            alert(data.message)
+          }
+        }
+      });
+
+    });
+  
+    
+  </script>
+
+        </header>
+
+
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark " id="navbar">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{% url 'index_page' %}">
+    <img src="{%static "/images/logo.jpeg" %}" alt="Robtotics Logo" style="width:40px;"> Robotics Club
+  </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav ml-auto"  >
+      <li class="nav-item">
+      <a class="nav-link" href="{% url 'index_page' %}">Home
+</a>
+    </li>
+    {% if user.is_authenticated %}
+                <a id="logout" href="http://127.0.0.1:8000/index/user_logout/" class="w3-text-white nav-link"  >
+                  <!-- $(event.target).data("rowid")r -->
+                <i class="fas fa-user-plus"   aria-hidden="true"></i>logout
+</a>
+                {% else %}
+                <a id="login" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> SignIn
+                </a>
+                {% endif %}
+                <a id="register" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id02').style.display='block'">
+                <i class="fas fa-user" aria-hidden="true"></i> Register</a>
+                </div>
+       
+
+<!-- {% if user.is_authenticated %} 
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'basic_app:logout' %}">Logout <i class="fa fa-user"></i></a></li>
+        
+      {% else %}
+        <li class="nav-item"> <a class="nav-link" href="{% url 'basic_app:login' %}">Login <i class="fa fa-user"></i></a></li>
+      {% endif %}
+      
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'basic_app:signup' %}">Register<i class="fa fa-user-plus"></i>
+</a>
+    </li>
+ -->
+
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+          More
+        </a>
+        <div class="dropdown-menu" style="right:0; left:auto; margin-top:0.7rem;" aria-labelledby="navbarDropdownMenuLink" >
+          
+          <a class="dropdown-item" href="{% url 'basic_app:achievements' %}">Achievements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:gallery' %}">Gallery</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:team' %}">Team</a>
+          <div class="dropdown-divider"></div>
+          {% if user.is_authenticated %} 
+          <a class="dropdown-item" href="{% url 'basic_app:announcements' %}">Make Announcements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:view_announcements' %}">View Announcements</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:item_view' %}">Store</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:add_item' %}">add_item</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'basic_app:request_mentor' %}">Cart</a>
+          <div class="dropdown-divider"></div>
+          {% endif %}
+          <a class="dropdown-item" href="{% url 'basic_app:donate' %}">Donate</a>
+        </div>
+      </li>
+
+
+
+
+</ul>
+
+</nav>
+<div style="overflow: hidden;">
+    {% block body_block %}
+
+    {% endblock %}
+  </div>
+</body>
+</html>

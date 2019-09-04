@@ -1,0 +1,20 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+	{% for notification in notifications %}
+	<div>
+	{% if notification.read %}
+	<a href="{{notification.pk}}" style="color: #A9A9A9">{{notification.subject}}</a><hr>
+	
+	{% else %}
+	<a href="{{notification.pk}}" style="color: black">{{notification.subject}}</a><hr>
+	{%endif%}
+
+     
+
+</div>
+	{% endfor %}
+
+{% endblock %}

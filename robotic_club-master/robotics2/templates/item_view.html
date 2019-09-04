@@ -1,0 +1,235 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+<div class="toolcontent">
+       <div class="container-fluid">
+      <!--SEARCH--> 
+      <div class="row" style="margin-bottom: 20px;">
+          <div class="col-md-5 search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div id="upload" class="col-md-5">
+                <button type="button" class="btn btn-primary"
+                onclick="document.getElementById('id03').style.display='block'">Upload Product</button>
+              </div>
+      </div>
+      <!--modal-->
+     
+      <!--product-->
+      <div class="container-fluid">
+       <div class="prodcont">
+       	{% for item in items %}
+         <div ><img src="{{item.photo1.url}}" width="100%" height="100%" value="{{item.id}}"></div>
+          
+<!--  {{item.text}}
+ {{item.amount}} -->
+ 
+
+{%endfor%}
+
+
+        </div>
+      </div>
+        </div><!--toolcontent-->
+</body>
+<script>
+ $(document).ready(function(){
+  $("img").click(function(){
+
+  	var id_= $(this).attr("value");
+
+  	var url_='{%url "basic_app:item_view" %}'+id_;
+
+  	
+  	$.ajax({
+               
+        url: url_,
+        type: 'get',
+        
+        dataType: 'json',
+        success: function (data) {
+
+        
+          if (data.working) {
+          	document.getElementById("product_name").innerHTML=data.product_name;
+          	document.getElementById("product_img").src=data.photo1;
+          	document.getElementById("product_description").innerHTML=data.text;
+          	document.getElementById("add_to_cart").setAttribute("value",url_);
+
+          	
+    $("#id04").css('display','block');
+             
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+  });
+   });
+
+
+
+
+
+//     var link=$(this).attr('src');
+//     $("#id04 img").attr('src',link);
+//     $("#id04").css('display','block');
+
+// if ($('#id04').css('display')== 'none'){
+//     $('#alertsuc').css('display', 'none');}
+    
+
+</script>
+<div id="id03" class="modal3">
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+      <div style="text-align: center;"><h2><i class="fas fa-plus-square"></i> Add Product</h2></div>
+      <!--span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span-->
+      </div>
+      <hr>
+          <label for="uname"><b><i class="fas fa-image"></i> Upload Image</b></label>
+          <input type="file" name="prodimage" style="overflow: hidden;"required>
+  
+          <label for="uname"><b><i class="fas fa-pencil-alt"></i> Product Name</b></label>
+          <input type="text" placeholder="Product Name" name="productname" required>
+          <label for="uname"><b><i class="fas fa-file-alt"></i> Description</b></label>
+          <textarea style="height:200px;" id="productdesc">Description...</textarea>
+          <label for="uname"><b><i class="fas fa-address-book "></i> Contact Name</b></label>
+          <input type="text" placeholder="Contact Name" name="contactname" required>
+          <label for="uname"><b><i class="fas fa-phone-square"></i> Mobile Number</b></label>
+          <input type="text" placeholder="Mobile Number" name="mobnum" >
+          <label for="uname"><b><i class="fas fa-id-card"></i> Address</b></label>
+          <input type="text" placeholder="address" name="contactaddress" required>
+  
+      <div class="container" style="background-color:#f1f1f1;padding:10px; margin-top:10px;">
+        <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-success" type="submit"style="width:100%; margin-top:5px;" ><a href="#"> Upload</a></button></div>
+
+        <div class="col-sm-3">
+            <button onclick="document.getElementById('id03').style.display='none'" class="btn btn-danger" style="float:right; width:100%;margin-top:5px;">Cancel</button></div>
+
+      </div>
+    </div>
+    </form>
+  </div>
+  <div id="id04" class="modal4">
+
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/333.svg" id="product_img" alt="Avatar" class="avatar">
+        </div>
+        <div class="container" style="padding-bottom: 60px;">
+          <h3 style="color:black;" id="product_name">Product Name</h3>
+          <p style="height:200px;width:100%; background-color:#e2e2e2;" id="product_description">Description</p>
+          <label for="amount_to_cart">Amount</label>
+          <input type="Number" id="amount_to_cart" name="amount_to_cart">
+        
+          <div id="alertsuc" class="alert alert-success alert-dismissible" style="display: none; position: absolute;">
+                <strong>Request Successful!</strong>
+            </div>
+        </div>
+    <div class="container" style="background-color:#f1f1f1;padding:10px;">
+            
+            <div class="row">
+            <div class="col-md-3">
+                <span id='add_to_cart' class="btn btn-success" type="submit"style="width:100%; margin-top:5px;" 
+                ><a> Add to cart</a></span></div>
+    
+            <div class="col-md-3">
+                <span id="cancelreq" onclick="document.getElementById('id04').style.display='none'" class="btn btn-danger" style="float:right; width:100%;margin-top:5px;"
+                >Back</span></div>
+    
+          </div>
+        </div>
+      </form>
+    </div> <!-- $('#alertsuc').show(); -->
+<script>
+ $(document).ready(function(){
+ $('#add_to_cart').click(function(){
+ 	var token = '{{csrf_token}}';
+ 	var amount = document.getElementById("amount_to_cart").value;
+ 	
+ 	var url_=document.getElementById("add_to_cart").getAttribute("value")+"/";
+ 	
+ $.ajax({
+ 		
+        headers: { "X-CSRFToken": token },
+        url: url_,
+        type: 'POST',
+        data: {
+          "amount":amount
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.request) {
+             
+             
+             $('#alertsuc').show();
+             
+          }
+          else{
+            alert(data.message);
+          }
+        }
+      });
+  });
+  $('#alertclose').click(function(){
+  $('#alertsuc').hide();
+  });
+  $('#cancelreq,#id04 .close').click(function(){
+    $('#alertsuc').css('display', 'none');}
+  );});
+  
+</script>
+<script>
+ var modal = document.getElementById('id01');
+ var modal1 = document.getElementById('id02');
+ var modal2 = document.getElementById('id03');
+ var modal3 = document.getElementById('id04');
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+if (event.target == modal1) {
+  modal1.style.display = "none";
+}
+if (event.target == modal2) {
+  modal2.style.display = "none";
+}
+if (event.target == modal3) {
+  modal3.style.display = "none";
+  $('#alertsuc').css('display', 'none');}
+
+}
+function function1(){
+  modal1.style.display = "none";
+  modal.style.display = "block";
+}
+function function2(){
+  modal1.style.display = "block";
+  modal.style.display = "none";
+}
+</script>
+<script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1500
+    });
+    $(function(){
+      $("#ch").load("{% static "modal.html" %}"); 
+    });
+</script>
+
+
+ <!-- <a href="{{item.id}}"><img src="{{item.photo1.url}}" width="42" height="42" } ></a> -->
+
+
+
+{% endblock %}

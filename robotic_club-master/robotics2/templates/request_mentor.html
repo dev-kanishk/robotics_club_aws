@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+    <div class="container-fluid">
+    	{% for item in items %}
+        <div class="container-fluid" style="
+        margin: 10px;
+        padding: 10px;
+            border-right: 3px solid rgb(207, 207, 207) ;
+            border-bottom: 3px solid rgb(211, 211, 211) ;">
+            <div class="row">
+            <div class="col-md-4">
+                <img src={{item.photo1.url}} style="width:14rem; height:14rem; border-style: solid; border-width: 1px; border-color: #D3D3D3; align-content: center">
+            </div>
+            <div class="col-md-8 row">
+                <div class="col-lg-9">
+                <h3 style="text-align: center; font-weight: bold">{{item.product_name}}</h3>
+                <p style="font-style: italic;font-size:1.4rem;">{{item.text}}</p>
+            </div>
+            <div class="col-lg-3">
+            	<a href="{{item.dis_id}}/delete">
+                <button class='btn btn-light' style="float: right; margin-top: 1rem;"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button>
+            </a>
+            </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        <form method = "POST">
+        	{% csrf_token%}
+
+        <button type="submit" class="btn btn-success" name="request" style="margin: 10px"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Request</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

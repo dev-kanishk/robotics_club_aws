@@ -1,0 +1,69 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+      <style type="text/css">
+      body{
+          background-color: #eaecee ;  
+        }
+      h1{
+          font-family: sans-serif ; 
+          font-size: 40px;
+          padding-right: 100px;
+          padding-top: 30px;
+      }  
+      h2{
+          margin: auto ;
+          padding-left: 50px;
+      }
+      label{
+          font-size:25px;
+          margin-bottom: 100px ; 
+          font-family: 'Courier New', Courier, monospace ; 
+        }
+      
+      form textarea{
+         resize: none ;
+         margin-top: 35px;
+         margin-left: 50px;
+         margin-bottom: 10px;
+         width: 1300px;
+	     height: 250px;
+         border: 2px solid #cccccc;
+	     padding: 5px;
+	     font-family: Tahoma, sans-serif;
+	     background-position: bottom right;
+	     background-repeat: no-repeat;
+      }
+       .p{
+        margin-right: 480px;
+       margin-left: 50px;
+       margin-top: 20px;
+       margin-bottom: 20px;
+       }
+      </style>
+
+      <center><h1>MAKE ANNOUNCEMENTS</h1></center>
+
+   
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %} 
+<body>
+    <h2>Details/Information</h2>
+ <form method="POST" action={%url "basic_app:create_notification" %}>
+  <textarea name="subject" placeholder="subject" style="height: 4rem;"></textarea>
+   {% csrf_token %}
+    <textarea name="txt" placeholder="Enter Text"></textarea>
+    <button class="p" type="submit">SUBMIT</button>
+ </form>
+{% endblock %}
+

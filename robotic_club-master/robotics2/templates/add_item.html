@@ -1,0 +1,23 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+<form method = "POST" enctype="multipart/form-data">
+	{{form.as_p}}
+	
+{% csrf_token%}
+
+<input type="submit" value="upload" name="upload_offer">
+
+</form>
+
+
+
+
+
+
+
+
+{% endblock %}

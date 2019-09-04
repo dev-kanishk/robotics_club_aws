@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+    <style>
+    @media (min-width:450px) and (max-width:768px){
+        .quan .remove{
+            width:80px;
+            position: absolute;
+            right:20px;
+            top:0px;
+        }
+    }
+    @media screen and (max-width:450px){
+        #request{
+            margin-left:70px!important;
+        }
+    }
+    </style>
+
+
+
+
+    <div class="container-fluid" id="suss">
+        
+        {% for item in items %}
+        <div class="container-fluid" style="margin: 20px 0 20px 0;
+       ">
+        <div class="row" style=" border:1px solid rgb(218, 218, 218);
+        padding: 10px; max-width:900px;
+        margin-left: auto;
+        margin-right: auto;">
+            <div class="col-sm-3" style="height:100%;">
+            <img src={{item.photo1.url}} class="img-fluid" style="max-height: 150px;width:180px;
+              margin-left: auto;
+  margin-right: auto;
+  display: block;" >
+            </div>
+            <div class="col-sm-9 container">
+                <div class="row">
+                <div class="col-md-9">
+                        <h2 style="margin-top:0px; text-align: center;">{{item.product_name}}</h2>
+                        <p style="font-size:1.4rem; ">{{item.text}}</p>
+                </div>
+                <div class="col-md-3 row quan">
+                        <div class="quantity col-sm-7" style="margin: 10px;">
+                                <label for="amount_to_cart" style="color: rgb(153, 153, 153)">Quantity:</label>
+                                {{item.amount}}
+                                <!-- <input type="Number" id="amount_to_cart" name="amount_to_cart" style="width:70px;"> -->
+                        </div>
+                        <div class="remove col-sm-7 text-center" style="margin:10px;">
+                                <a href="{{item.dis_id}}/delete" class='btn btn-light text-center' style="font-size: .9rem; padding:3px;"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>
+                                
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+        {% if empty == 1 %}
+        <br>
+        
+        <h2 style="text-align: center;">Your Cart is empty!!</h2>
+        {% endif %}
+        {% if empty == 0 %}
+        <form method = "POST">
+            {% csrf_token%}
+
+        <button id="request" type="submit" class="btn btn-outline-dark" name="request" style="margin: 40px 0px 40px 300px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Request</button>
+        </form>
+        {%endif%}
+    </div>
+
+
+
+
+
+
+{% endblock %}

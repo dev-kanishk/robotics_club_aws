@@ -1,0 +1,69 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet"> 
+
+
+    <div class="container-fluid">
+            <div class="row">
+            <div class="col">
+                    <h1 class="text-center congratulations" style="font-family: 'Alex Brush', cursive; font-size: 6vw;
+                    font-weight:1px;">Make Announcement</h1>
+            </div>
+    </div>
+    <hr style="border-width: 3px; border-color: rgba(200, 200, 200, 0.767);">
+
+    <div class="container-fluid">
+               
+                <div class="row" style="width: 80%; margin:auto;">
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                        {{ message }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %} 
+            <div class="row" style="width: 100%; margin:auto;"> <h3 style="margin-left:20px;">Subject</h3></div>
+            <form method="POST" action={%url "basic_app:create_notification" %} style="padding: 1.5rem; width: 100%">
+            
+                <textarea type="text" class="form-control" name="subject" placeholder="Subject"></textarea><br>
+                {% csrf_token %}
+                <textarea class="form-control" rows="5" id="comment" name="txt" placeholder="Description"></textarea>
+                <button class="btn btn-outline-dark" type="submit" style=" margin: 10px;">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+             <!--div id="makeann"class="makeannounce modal">
+                 <form action="/action_page.php" style="background-color: rgb(255, 255, 255); padding: 1.5rem;margin:50px;">
+                 <h1 class='display-4' style="padding-left: 15px;">Make Announcement</h1>
+                 <div class="form-group" >
+                   <input type="text" class="form-control" name="subject" placeholder="Subject"><br><br>
+                   <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Description"></textarea>
+                 </div>
+                 <div class="btn btn-outline-dark">Submit</div>
+               </form>
+     </div>
+    <div class="row">
+        <div class="row"> <h2>Subject</h2></div>
+        <div class="row">
+                <form method="POST" action={%url "basic_app:create_notification" %}>
+                        <textarea name="subject" placeholder="subject" style="height: 4rem;"></textarea>
+                         {% csrf_token %}
+                          <textarea name="txt" placeholder="Enter Text"></textarea>
+                          
+                </form>
+        <div class="row">
+                <button class="btn btn-outline-dark" ></button>" type="submit">SUBMIT</button>
+                <button class="btn btn-outline-light" onclick=""></button>" type="submit">Cancel</button>
+        </div>
+        </div>
+    </div-->
+  

@@ -1,0 +1,885 @@
+.w3-flat-turquoise
+{color:#fff;background-color:#1abc9c}
+.w3-flat-emerald
+{color:#fff;background-color:#2ecc71}
+.w3-flat-peter-river
+{color:#fff;background-color:#3498db}
+.w3-flat-amethyst
+{color:#fff;background-color:#9b59b6}
+.w3-flat-wet-asphalt
+{color:#fff;background-color:#34495e}
+.w3-flat-green-sea
+{color:#fff;background-color:#16a085}
+.w3-flat-nephritis
+{color:#fff;background-color:#27ae60}
+.w3-flat-belize-hole
+{color:#fff;background-color:#2980b9}
+.w3-flat-wisteria
+{color:#fff;background-color:#8e44ad}
+.w3-flat-midnight-blue
+{color:#fff;background-color:#2c3e50}
+.w3-flat-sun-flower
+{color:#fff;background-color:#f1c40f}
+.w3-flat-carrot
+{color:#fff;background-color:#e67e22}
+.w3-flat-alizarin
+{color:#fff;background-color:#e74c3c}
+.w3-flat-clouds
+{color:#000;background-color:#ecf0f1}
+.w3-flat-concrete
+{color:#fff;background-color:#95a5a6}
+.w3-flat-orange
+{color:#fff;background-color:#f39c12}
+.w3-flat-pumpkin
+{color:#fff;background-color:#d35400}
+.w3-flat-pomegranate
+{color:#fff;background-color:#c0392b}
+.w3-flat-silver
+{color:#000;background-color:#bdc3c7}
+.w3-flat-asbestos
+{color:#fff;background-color:#7f8c8d}
+.w3-metro-light-green
+{color:#fff;background-color:#99b433}
+.w3-metro-green
+{color:#fff;background-color:#00a300}
+.w3-metro-dark-green
+{color:#fff;background-color:#1e7145}
+.w3-metro-magenta
+{color:#fff;background-color:#ff0097}
+.w3-metro-light-purple
+{color:#fff;background-color:#9f00a7}
+.w3-metro-purple
+{color:#fff;background-color:#7e3878}
+.w3-metro-dark-purple
+{color:#fff;background-color:#603cba}
+.w3-metro-darken
+{color:#fff;background-color:#1d1d1d}
+.w3-metro-teal
+{color:#fff;background-color:#00aba9}
+.w3-metro-light-blue
+{color:#000;background-color:#eff4ff}
+.w3-metro-blue
+{color:#fff;background-color:#2d89ef}
+.w3-metro-dark-blue
+{color:#fff;background-color:#2b5797}
+.w3-metro-yellow
+{color:#fff;background-color:#ffc40d}
+.w3-metro-orange
+{color:#fff;background-color:#e3a21a}
+.w3-metro-dark-orange
+{color:#fff;background-color:#da532c}
+.w3-metro-red
+{color:#fff;background-color:#ee1111}
+.w3-metro-dark-red
+{color:#fff;background-color:#b91d47}
+.w3-win8-lime
+{color:#fff;background-color:#a4c400}
+.w3-win8-green
+{color:#fff;background-color:#60a917}
+.w3-win8-emerald
+{color:#fff;background-color:#008a00}
+.w3-win8-teal
+{color:#fff;background-color:#00aba9}
+.w3-win8-cyan
+{color:#fff;background-color:#1ba1e2}
+.w3-win8-blue
+{color:#fff;background-color:#3e65ff}
+.w3-win8-cobalt
+{color:#fff;background-color:#0050ef}
+.w3-win8-indigo
+{color:#fff;background-color:#6a00ff}
+.w3-win8-violet
+{color:#fff;background-color:#aa00ff}
+.w3-win8-pink
+{color:#fff;background-color:#f472d0}
+.w3-win8-magenta
+{color:#fff;background-color:#d80073}
+.w3-win8-crimson
+{color:#fff;background-color:#a20025}
+.w3-win8-red
+{color:#fff;background-color:#e51400}
+.w3-win8-orange
+{color:#fff;background-color:#fa6800}
+.w3-win8-amber
+{color:#fff;background-color:#f0a30a}
+.w3-win8-yellow
+{color:#fff;background-color:#e3c800}
+.w3-win8-brown
+{color:#fff;background-color:#825a2c}
+.w3-win8-olive
+{color:#fff;background-color:#6d8764}
+.w3-win8-steel
+{color:#fff;background-color:#647687}
+.w3-win8-mauve
+{color:#fff;background-color:#76608a}
+.w3-win8-taupe
+{color:#fff;background-color:#87794e}
+.w3-win8-sienna
+{color:#fff;background-color:#a0522d}
+.w3-highway-brown
+{color:#fff;background-color:#633517}
+
+.w3-highway-red
+{color:#fff;background-color:#a6001a}
+
+.w3-highway-orange
+{color:#fff;background-color:#e06000}
+
+.w3-highway-schoolbus
+{color:#fff;background-color:#ee9600}
+
+.w3-highway-yellow
+{color:#fff;background-color:#ffab00}
+
+.w3-highway-green
+{color:#fff;background-color:#004d33}
+
+.w3-highway-blue
+{color:#fff;background-color:#00477e}
+.w3-2019-fiesta
+{color:#fff;background-color:#DD4132}
+.w3-2019-jester-red
+{color:#fff;background-color:#9E1030}
+.w3-2019-turmeric
+{color:#fff;background-color:#FE840E}
+.w3-2019-living-coral
+{color:#fff;background-color:#FF6F61}
+.w3-2019-pink-peacock
+{color:#fff;background-color:#C62168}
+.w3-2019-pepper-stem
+{color:#fff;background-color:#8D9440}
+.w3-2019-aspen-gold
+{color:#000;background-color:#FFD662}
+.w3-2019-princess-blue
+{color:#fff;background-color:#00539C}
+.w3-2019-toffee
+{color:#fff;background-color:#755139}
+.w3-2019-mango-mojito
+{color:#000;background-color:#D69C2F}
+.w3-2019-terrarium-moss
+{color:#fff;background-color:#616247}
+.w3-2019-sweet-lilac
+{color:#000;background-color:#E8B5CE}
+.w3-2019-soybean
+{color:#000;background-color:#D2C29D}
+.w3-2019-eclipse
+{color:#fff;background-color:#343148}
+.w3-2019-sweet-corn
+{color:#000;background-color:#F0EAD6}
+.w3-2019-brown-granite
+{color:#fff;background-color:#d68c36}
+.w3-2019-chili-pepper
+{color:#fff;background-color:rgb(197, 136, 37)}
+.w3-2019-biking-red
+{color:#fff;background-color:#77212E}
+.w3-2019-creme-de-peche
+{color:#000;background-color:#F5D6C6}
+.w3-2019-peach-pink
+{color:#fff;background-color:#FA9A85}
+.w3-2019-rocky-road
+{color:#fff;background-color:#5A3E36}
+.w3-2019-fruit-dove
+{color:#fff;background-color:#CE5B78}
+.w3-2019-sugar-almond
+{color:#fff;background-color:#935529}
+.w3-2019-dark-cheddar
+{color:#fff;background-color:#E08119}
+.w3-2019-galaxy-blue
+{color:#fff;background-color:#2A4B7C}
+.w3-2019-bluestone
+{color:#fff;background-color:#577284}
+.w3-2019-orange-tiger
+{color:#fff;background-color:#F96714}
+.w3-2019-eden
+{color:#fff;background-color:#264E36}
+.w3-2019-vanilla-custard
+{color:#000;background-color:#F3E0BE}
+.w3-2019-evening-blue
+{color:#fff;background-color:#2A293E}
+.w3-2019-paloma
+{color:#fff;background-color:#9F9C99}
+.w3-2019-guacamole
+{color:#fff;background-color:#797B3A}
+
+.w3-2018-red-pear
+{color:#fff;background-color:#7F4145}
+.w3-2018-valiant-poppy
+{color:#fff;background-color:#BD3D3A}
+.w3-2018-nebulas-blue
+{color:#fff;background-color:#3F69AA}
+.w3-2018-ceylon-yellow
+{color:#000;background-color:#D5AE41}
+.w3-2018-martini-olive
+{color:#fff;background-color:#766F57}
+.w3-2018-russet-orange
+{color:#fff;background-color:#E47A2E}
+.w3-2018-crocus-petal
+{color:#000;background-color:#BE9EC9}
+.w3-2018-limelight
+{color:#000;background-color:#F1EA7F}
+.w3-2018-quetzal-green
+{color:#fff;background-color:#006E6D}
+.w3-2018-sargasso-sea
+{color:#fff;background-color:#485167}
+.w3-2018-tofu
+{color:#000;background-color:#EAE6DA}
+.w3-2018-almond-buff
+{color:#000;background-color:#D1B894}
+.w3-2018-quiet-gray,.w3-2018-quiet-grey
+{color:#000;background-color:#BCBCBE}
+.w3-2018-meerkat
+{color:#000;background-color:#95dee3}
+.w3-2018-meadowlark
+{color:#000;background-color:#ECDB54}
+.w3-2018-cherry-tomato
+{color:#fff;background-color:#E94B3C}
+.w3-2018-little-boy-blue
+{color:#000;background-color:#6F9FD8}
+.w3-2018-chili-oil
+{color:#fff;background-color:#944743}
+.w3-2018-pink-lavender
+{color:#000;background-color:#DBB1CD}
+.w3-2018-blooming-dahlia
+{color:#000;background-color:#EC9787}
+.w3-2018-arcadia
+{color:#fff;background-color:#00A591}
+.w3-2018-emperador
+{color:#fff;background-color:#6C4F3D}
+.w3-2018-ultra-violet
+{color:#fff;background-color:#6B5B95}
+.w3-2018-almost-mauve
+{color:#000;background-color:#EADEDB}
+.w3-2018-spring-crocus
+{color:#fff;background-color:#BC70A4}
+.w3-2018-lime-punch
+{color:#000;background-color:#BFD641}
+.w3-2018-sailor-blue
+{color:#fff;background-color:#2E4A62}
+.w3-2018-harbor-mist
+{color:#000;background-color:#B4B7BA}
+.w3-2018-warm-sand
+{color:#000;background-color:#C0AB8E}
+.w3-2018-coconut-milk
+{color:#000;background-color:#F0EDE5}
+.w3-food-apple
+{color:#000;background-color:#76cd26}
+.w3-food-aspargus
+{color:#fff;background-color:#77ab56}
+.w3-food-apricot
+{color:#fff;background-color:#ffb16d}
+.w3-food-aubergine
+{color:#fff;background-color:#3d0734}
+.w3-food-avocado
+{color:#fff;background-color:#87a922}
+.w3-food-banana
+{color:#000;background-color:#fafe4b}
+.w3-food-butter
+{color:#000;background-color:#ffff81}
+.w3-food-blueberry
+{color:#fff;background-color:#464196}
+.w3-food-carrot
+{color:#fff;background-color:#e67e22}
+.w3-food-cherry
+{color:#fff;background-color:#cf0234}
+.w3-food-chocolate
+{color:#fff;background-color:#411900}
+.w3-food-cranberry
+{color:#fff;background-color:#9e003a}
+.w3-food-coffee
+{color:#fff;background-color:#a6814c}
+.w3-food-egg
+{color:#000;background-color:#fffcc4}
+.w3-food-grape
+{color:#fff;background-color:#6c3461}
+.w3-food-kiwi
+{color:#000;background-color:#8ee53f}
+.w3-food-lemon
+{color:#000;background-color:#fdff52}
+.w3-food-lime
+{color:#000;background-color:#bffe28}
+.w3-food-mango
+{color:#fff;background-color:#ffa62b}
+.w3-food-mushroom
+{color:#fff;background-color:#ba9e88}
+.w3-food-mustard
+{color:#fff;background-color:#ceb301}
+.w3-food-mint
+{color:#000;background-color:#c0fa8b}
+.w3-food-olive
+{color:#fff;background-color:#6e750e}
+.w3-food-orange
+{color:#fff;background-color:#f97306}
+.w3-food-pea
+{color:#fff;background-color:#a4bf20}
+.w3-food-peach
+{color:#fff;background-color:#ffb07c}
+.w3-food-pear
+{color:#000;background-color:#cbf85f}
+.w3-food-pistachio
+{color:#000;background-color:#c0fa8b}
+.w3-food-plum
+{color:#fff;background-color:#3f012c}
+.w3-food-pomegranate
+{color:#fff;background-color:#c0392b}
+.w3-food-pumpkin
+{color:#fff;background-color:#d35400}
+.w3-food-raspberry
+{color:#fff;background-color:#b00149}
+.w3-food-saffron
+{color:#fff;background-color:#feb209}
+.w3-food-salmon
+{color:#fff;background-color:#ff796c}
+.w3-food-spearmint
+{color:#000;background-color:#1ef876}
+.w3-food-squash
+{color:#fff;background-color:#f2ab15}
+.w3-food-strawberry
+{color:#fff;background-color:#fb2943}
+.w3-food-tomato
+{color:#fff;background-color:#ec2d01}
+.w3-food-wheat
+{color:#000;background-color:#fbdd7e}
+.w3-food-wine
+{color:#fff;background-color:#80013f}
+.w3-vivid-pink
+{color:#fff;background-color:#ffb5bA}
+.w3-vivid-red
+{color:#fff;background-color:#be0032}
+.w3-vivid-orange
+{color:#fff;background-color:#f38400}
+.w3-vivid-yellow
+{color:#fff;background-color:#f3c300}
+.w3-vivid-green
+{color:#fff;background-color:#008856}
+.w3-vivid-blue
+{color:#fff;background-color:#00a1c2}
+.w3-vivid-black
+{color:#fff;background-color:#000}
+.w3-vivid-white
+{color:#000;background-color:#fff}
+
+.w3-vivid-purple
+{color:#fff;background-color:#9a4eae}
+.w3-vivid-purple
+{color:#fff;background-color:#9a4eae}
+.w3-vivid-yellowish-pink
+{color:#fff;background-color:#ffb7a5}
+.w3-vivid-reddish-orange
+{color:#fff;background-color:#e25822}
+.w3-vivid-orange-yellow
+{color:#fff;background-color:#f6a600}
+.w3-vivid-greenish-yellow
+{color:#fff;background-color:#dcd300}
+.w3-vivid-yellow-green
+{color:#fff;background-color:#8db600}
+.w3-vivid-yellowish-green
+{color:#fff;background-color:#27a64c}
+.w3-vivid-bluish-green
+{color:#fff;background-color:#008882}
+.w3-vivid-greenish-blue
+{color:#fff;background-color:#0085a1}
+.w3-vivid-purplish-blue
+{color:#fff;background-color:#30267a}
+.w3-vivid-reddish-purple
+{color:#fff;background-color:#870074}
+.w3-vivid-purplish-red
+{color:#fff;background-color:#ce4676}
+.zoom {
+  transition: transform .2s;
+}
+.zoomimg {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  font-style: italic ;
+  font-weight:bold;
+  -ms-transform: scale(1.07) !important; /* IE 9 */
+  -webkit-transform: scale(1.07) !important; /* Safari 3-8 */
+  transform: scale(1.07) !important; 
+}
+.zoomimg:hover {
+  -ms-transform: scale(1.2) !important; /* IE 9 */
+  -webkit-transform: scale(1.2) !important; /* Safari 3-8 */
+  transform: scale(1.2) !important; 
+}
+
+header #logoarea{
+height:220px;}
+
+header #name{
+position:absolute;
+top: 34px;;
+left:150px;
+font-weight: 4rem;
+}
+header h3{
+    color:white;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+header #logo{
+width: 100px;
+margin: 40px 10px;
+}
+header #login{
+    position: absolute;
+    top:230px;
+    right:10px;
+}
+header #register{
+    position: absolute;
+    top:230px;
+    right:90px;
+}
+/* Full-width input fields */
+.modal2 input[type=text],.modal2 input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.modal2 input[type=text]:focus,.modal2 input[type=password]:focus,.modal2 input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+.modal2 button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.modal2 button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.modal2 .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.modal2.cancelbtn, .modal2.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.modal2 .container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal2 { 
+  display: none;/* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4);  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal2 .modal-content {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+/* Style the horizontal ruler */
+.modal2 hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.modal2 .close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.modal2 .close:hover,
+.modal2 .close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.modal2 .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .modal2 .cancelbtn, .modal2 .signupbtn {
+     width: 100%;
+  }
+}
+
+.modal input[type=text],.modal input[type=password],.modal input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+.modal label{
+      margin: 3px 0px 1px 0px;
+  }
+  
+  /* Set a style for all buttons */
+  .modal button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .modal button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .modal .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .modal .imgcontainer {
+    text-align: center;
+    margin: 17px 0 12px 0;
+    position: relative;
+  }
+  
+  .modal img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .modal .container {
+    padding: 16px;
+  }
+  
+  .modal span.psw a{
+      text-decoration: none;
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: auto !important; /* Enable scroll if needed */ /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 30px;
+  }
+  
+  /* Modal Content/Box */
+  .modal .modal-content {
+    background-color: #fefefe;
+    margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .modal .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .modal .close:hover,
+  .modal .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .modal .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .modal span.psw {
+       display: block;
+       float: none;
+    }
+    .modal .cancelbtn {
+       width: 100%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+      .modal .modal-content{
+          width:70%;
+      }}
+      .modal3 input[type=text],.modal3 input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 1px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+    .modal3 label{
+          margin: 5px 0px 1px 0px;
+      }
+      
+      /* Center the image and position the close button */
+      .modal3 .imgcontainer {
+        text-align: center;
+        position: relative;
+        background-color:#f1f1f1;
+        padding:10px;
+        margin-bottom:10px;
+      }
+      
+      .modal3 .container {
+        padding: 16px;
+      }
+      
+      /* The Modal (background) */
+      .modal3 {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow-y: auto !important; /* Enable scroll if needed */ /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 30px;
+      }
+      
+      /* Modal Content/Box */
+      .modal3 .modal-content {
+        background-color: #fefefe;
+        margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 50%;
+        padding:16px; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button (x) */
+      .modal3 .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      
+      .modal3 .close:hover,
+      .modal3 .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+      
+      /* Add Zoom Animation */
+      .modal3 .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+      }
+      
+      @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+      }
+        
+      @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+      }
+      
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        .modal3 span.psw {
+           display: block;
+           float: none;
+        }
+        .modal3 .cancelbtn {
+           width: 100%;
+        }
+        #maki img{
+          width:100% !important;
+        }
+      }
+      @media screen and (max-width: 768px) {
+          .modal3 .modal-content{
+              width:70%;
+          }
+          #maki img{
+            width:33% !important;
+          }}
+          .search-container input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            background-color: #ddd;
+            width:82%;
+          }
+          
+          .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            width:15%;
+          }
+          
+          .search-container button:hover {
+            background: #ccc;
+          }
+          #upload{
+            float: right;
+            margin-top: 8px;}
+            
+            .modal4 {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow-y: auto !important; /* Enable scroll if needed */ /* Fallback color */
+              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+              padding-top: 30px;
+            }
+            
+            /* Modal Content/Box */
+            .modal4 .modal-content {
+              background-color: #fefefe;
+              margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+              border: 1px solid #888;
+              width: 50%; /* Could be more or less, depending on screen size */
+            }
+            
+            /* The Close Button (x) */
+            .modal4 .close {
+              position: absolute;
+              right: 25px;
+              top: 0;
+              color: #000;
+              font-size: 35px;
+              font-weight: bold;
+            }
+            .modal4 .imgcontainer {
+              text-align: center;
+              margin: 17px 0 12px 0;
+              position: relative;
+            }
+            
+            .modal4 img.avatar {
+              width: 40%;
+              border-radius: 5px;
+            }
+            
+            .modal4 .container {
+              padding: 16px;
+            }
+            
+            .modal4 .close:hover,
+            .modal4 .close:focus {
+              color: red;
+              cursor: pointer;
+            }
+            
+            /* Add Zoom Animation */
+            .modal4 .animate {
+              -webkit-animation: animatezoom 0.6s;
+              animation: animatezoom 0.6s
+            }
+            
+            @-webkit-keyframes animatezoom {
+              from {-webkit-transform: scale(0)} 
+              to {-webkit-transform: scale(1)}
+            }
+              
+            @keyframes animatezoom {
+              from {transform: scale(0)} 
+              to {transform: scale(1)}
+            }
+
+.prodcont div{
+  margin:5px;
+  padding:40px;
+  display:inline-block;
+  width:23%;
+  border-right: 3px solid rgb(207, 207, 207) ;
+  border-bottom: 3px solid rgb(211, 211, 211) ;
+}
+@media screen and (max-width: 768px) {
+  .prodcont div{
+    width: 29.5%;
+    padding:10px;
+  }
+  .prodcont img{
+    width:100% !important;
+    height:150px;
+  }
+}
+@media screen and (max-width: 450px) {
+ .prodcont div{
+    width:95% !important;
+  }
+}

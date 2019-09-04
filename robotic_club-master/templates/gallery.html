@@ -1,0 +1,371 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush&display=swap" rel="stylesheet"> 
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+          <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<style>
+            body {
+              font-family: Arial;
+              margin: 0;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            
+            /* Position the image container (needed to position the left and right arrows) */
+            .container {
+              position: relative;
+            }
+            
+            /* Hide the images by default */
+            .mySlides {    
+                        
+              display: none;
+              
+            }
+            .mySlides .showpic{
+    
+              max-height: 300px;
+              display: block;
+              margin-right:auto; 
+              margin-left:auto;
+            }
+            
+            /* Add a pointer when hovering over the thumbnail images */
+            .cursor {
+              cursor: pointer;
+              height:100%;
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+              width: 100%;
+            }
+            
+            /* Next & previous buttons */
+            .prev,
+            .next {
+              position: absolute;
+              cursor: pointer;
+              top: 220px;
+              
+              width: auto;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 20px;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+              -webkit-user-select: none;
+            }
+            
+            /* Position the "next button" to the right */
+            .next {
+              right: 15px;
+              border-radius: 3px 0 0 3px;
+            }
+            
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+              background-color: rgba(65, 62, 62, 0.8);
+            }
+            
+            /* Number text (1/3 etc) */
+            
+            
+            /* Container for image text */
+            .caption-container {
+              border:3px solid rgb(221, 221, 221);
+              margin-top: 20px;
+              width: 100%;
+              text-align: center ;              
+              padding: 20px;
+              color: grey;
+              text-transform: uppercase; 
+              font-weight: bolder; 
+            }
+            
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Six columns side by side */
+            .column {
+              float: left;
+              height:300px;
+              overflow: hidden;
+              padding:40px!important;          
+            }
+            
+            /* Add a transparency effect for thumnbail images */
+            .demo {
+              opacity: 0.7;
+            }
+            
+            .active,
+            .demo:hover {
+              opacity: 1;
+            }
+            @media screen and (max-width:950px){
+            .prev,
+            .next {
+                top:150px;
+                padding: 12px;
+            }
+            }
+            @media screen and (max-width:768px){
+              .prev,
+            .next {
+                top:180px;
+                padding: 9px;
+            }
+            .column{
+              height:200px;
+            }
+            
+          }
+            @media screen and (max-width:420px){
+              .prev,
+            .next {
+                top:120px;
+                padding: 6px;
+            }
+            .column{
+              height:260px!important;
+            }
+          
+          }
+            </style>
+            <style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#modcaption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+            </style>
+            <body>
+                <div id="modgal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close" onclick="closemodal(document.getElementById('modgal'))" >&times;</span>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                  
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="modimg">
+                  
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="modcaption"></div>
+                  </div>
+            <div class="container-fluid" style="max-width:1250px; ">
+                <div class="row">
+                    <div class="col">
+                            <h1 class="text-center congratulations" style="font-family: 'Alex Brush', cursive; font-size: 10vw;
+                            font-weight:1px;">Memories</h1>
+                    </div>
+            </div>
+            <hr style="border-width: 3px; border-color: rgba(200, 200, 200, 0.767);">
+
+            <div class="w3-row" data-aos="zoom-out-down" style="padding:40px; box-shadow: 3px 3px 7px grey; margin-top: 30px;">
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic" src="{%static "/images/gal1.jpeg" %}"  alt="New York">              </div>
+            
+              <div class="mySlides col ">
+                  <img class="img-fluid img-thumbnail showpic" src="{%static "/images/gal2.jpeg" %}" id="gal"  alt="New York">              </div>
+            
+              <div class="mySlides col">
+              <img class="img-fluid img-thumbnail showpic" src="{%static "/images/gal3.jpeg" %}"  id="gal"  alt="New York">              </div>
+                
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic" src="{%static "/images/gal4.jpeg" %}"  id="gal"  alt="New York">              </div>
+            
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic"src="{%static "/images/mac1.jpeg" %}" id="gal" 
+                 alt="New York">              </div>
+                
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic"src="{%static "/images/mac2.jpeg" %}"  id="gal"
+                 alt="New York">              </div>
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic"src="{%static "/images/mac3.jpeg"%}"  id="gal" alt="New York">              </div>
+              <div class="mySlides col">
+                    <img class="img-fluid img-thumbnail showpic" src="{%static "/images/ach1.jpeg"%}"  id="gal"
+                     alt="New York">              </div>
+              <div class="mySlides col">
+                  <img class="img-fluid img-thumbnail showpic" src="{%static "/images/ach2.jpeg" %}"  id="gal" alt="New York">  </div>
+              <div class="mySlides col">
+                <img class="img-fluid img-thumbnail showpic" src="{%static "/images/ach3.jpeg" %}"  id="gal" alt="New York">  </div>
+                
+              
+            
+              <div class="caption-container" data-aos="fade-up" data-aos-delay="500">
+                  <div id="caption"></div>
+              </div>
+            </div>
+              <div class="w3-row" style="border:1px solid rgb(204, 204, 204);
+              margin:20px 0 20px 0; width:100%;" data-aos="flip-up" data-aos-delay="650">
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/gal1.jpeg" %}" onclick="currentSlide(1)" alt="Class Room">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/gal2.jpeg" %}" onclick="currentSlide(2)" alt="Aero-modelling Event Parakram">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/gal3.jpeg" %}"   onclick="currentSlide(3)" alt="Team in Action">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/gal4.jpeg" %}" onclick="currentSlide(4)" alt="Drone">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/mac1.jpeg" %}"  onclick="currentSlide(5)" alt="Raspberry Pi cluster based parallel processing technique similar to functionality used in supercomputer">
+                </div>    
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/mac2.jpeg" %}"   onclick="currentSlide(6)" alt="Raspberry Pi based bot for image processing">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/mac3.jpeg" %}"   onclick="currentSlide(7)" alt="Drone enabled with auto-stabilisation">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/ach1.jpeg" %}"  onclick="currentSlide(8)" alt="Finalists of EYRC 2019">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/ach2.jpeg" %}"  onclick="currentSlide(9)" alt="Smart India Hackathon Harsh Jain ">
+                </div>
+                <div class="column w3-col m4 l3">
+                    <img class="demo cursor" src="{%static "/images/ach3.jpeg" %}"  onclick="currentSlide(10)" alt="Robowars 2018 IIT Patna">
+                </div>
+              </div>
+            </div>
+            
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var modimg= document.getElementById('modgal');
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              var chsrc=slides[slideIndex-1].childNodes[1].src;
+              $('#modgal img').attr('src',chsrc);
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            </script>  
+            <script>
+            $(document).ready(function(){
+              $('.column').dblclick(function(){
+                var newsrc=$(this).find("img").attr('src');
+                $('#modimg').attr('src',newsrc);
+                openmodal(document.getElementById('modgal'));
+              });
+              $('.mySlides').click(function(){
+                var newsrc=$(this).find("img").attr('src');
+                $('#modimg').attr('src',newsrc);
+                openmodal(document.getElementById('modgal'));
+              });
+            });
+            </script>
+
+<script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1500
+    });
+    $(function(){
+      $("#ch").load("modal.html"); 
+    });
+</script>
+
+
+{% endblock %}

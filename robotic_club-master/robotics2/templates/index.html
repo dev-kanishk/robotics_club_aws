@@ -1,0 +1,145 @@
+<!DOCTYPE html>{% extends "base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+
+
+
+<div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12" style="
+/*                    background-image: url(./images/im1.jpg);
+                    background-size: cover;
+                    background-attachment: fixed;
+                    opacity:0.7;*/
+                    background-color: black;
+                    ">
+                    <div class="col-md-8" 
+                    style="background: transparent; 
+                    color: white; 
+                    float:right; 
+                    font-size: 30px; 
+                    text-transform: uppercase; 
+                    font-weight: bolder;
+                    text-align: center;
+                    ">
+                        <p id="imagebox" style="padding: 220px 20px 160px 20px;">Two Drones. One enabled with
+                                auto-stabilisation mode using
+                                Pixhawk flight controller and
+                                other is Pluto X Nano Drone
+                                for indoor environment</p>
+                    </div>
+                    <div class="col-md-3"  style="float:left;">
+                            <img id="image1" src="{% static "images/mac3.jpeg" %}" style="transform: rotate(350deg); width:100%; padding: 200px 10px 100px 10px;">
+                    </div>
+                </div>
+                <div class="col-md-12" style="padding:1%; box-shadow: 7px 7px 5px grey;" >
+                <div class="col-md-3 " id="vishead" style="float:left; padding-top:150px;">
+                    <h3 style="font-size:25px; text-align: center; font-weight: bolder; color: white; background-color: black; width:100%; padding:10px; ">VISION</h3>
+                </div>
+                <div class="col-md-9" id="vishead" style="
+                float:right; 
+                font-size: 22px; 
+                text-transform: uppercase; 
+                text-align: center;
+                padding:50px 20px 50px 20px;">
+                        <p>To inspire and enable students to explore their
+                                creativity and engineering skills through
+                                robotics; in a fun and competitive
+                                atmosphere that teaches them both
+                                technical skills, teamwork and leadership. To
+                                promote learning of new technologies
+                                amongst the students and to enable them to
+                                experience the joy of designing something on
+                                their own.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12" id="robo" style="
+/*                        background-image: url(./images/im2.jpg);
+                        background-size: cover;
+                        background-attachment: fixed;
+                        opacity:0.7;
+                        background-position-y: -150px;*/
+                        background-color: black;
+                        ">
+                        <div class="col-md-3" style="float:right;">
+                                <img src="{% static "images/mac2.jpeg" %}" style="transform: rotate(10deg);  padding: 200px 10px 100px 10px; width:100%;">
+                        </div>
+                        <div class="col-md-8" 
+                        style="background: transparent; 
+                        color: white; 
+                        float:left; 
+                        font-size: 30px; 
+                        text-transform: uppercase; 
+                        font-weight: bolder;
+                        text-align: center;
+                        margin-top: 20px;
+                        ">
+                            <p id="imagebox" style=" padding: 250px 20px 190px 20px;">Raspberry Pi based bot for
+                                    image processing and facial
+                                    recognition and identification
+                                    features</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-12" style="padding:1%; box-shadow: 7px 7px 5px grey;">
+                    <div class="col-md-3 "id="vishead" style="float:right; padding-top:130px;">
+                            <h3 style="font-size:25px; text-align: center; font-weight: bolder; color: white; background-color: black; width:100%; padding:10px; ">MISSION</h3>
+                        </div>
+                    <div class="col-md-9" id="vishead" style="
+                    float:left; 
+                    font-size: 22px; 
+                    text-transform: uppercase; 
+                    text-align: center;
+                    padding:80px 20px 50px 20px;
+                    ">
+                            <p>To inspire young people to be the leaders in
+                                    robotics, by engaging them in exciting, mentor-
+                                    based programs that build engineering skills,
+                                    inspire innovation, and foster well-rounded life
+                                    capabilities including self confidence,
+                                    communication and leadership.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12" style="
+/*                            background-image: url(./images/im3.jpeg);
+                            background-size: cover;
+                            background-attachment: fixed;
+                            opacity:0.7;*/
+                            background-color: black;
+                            ">
+                            <div class="col-md-8" 
+                            style="background: transparent; 
+                            color: white; 
+                            float:right; 
+                            font-size: 30px; 
+                            text-transform: uppercase; 
+                            font-weight: bolder;
+                            text-align: center;
+                            margin-top: 20px;
+                            ">
+                                <p id="imagebox" style="padding: 240px 20px 180px 20px;">Raspberry Pi cluster based
+                                        parallel processing technique
+                                        similar to functionality used in
+                                        supercomputer</p>
+                            </div>
+                            <div class="col-md-3" style="float:left;">
+                                    <img id="image1" src="{% static "images/mac1.jpeg" %}" style="transform: rotate(350deg); padding: 200px 10px 100px 10px; width:100%;">
+                            </div>
+                        </div>
+
+
+
+
+
+{% endblock %}

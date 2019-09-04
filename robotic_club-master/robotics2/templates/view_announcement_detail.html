@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 style="align-content:center;">Announcement</h2>
+	<p>Subject: {{announcement.subject}}<br></p>
+	<p>Description: {{announcement.text}}<br></p>
+	made by:
+	{{announcement.send_by}}
+	{%if announcement.send_by == request.user.username%}<br>
+	<a href="/index/delete_announcement/{{announcement.unique_code}}">delete</a> 
+	{%endif%}
+
+</body>
+</html>

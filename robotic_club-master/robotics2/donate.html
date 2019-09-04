@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Donate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+  <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+        <header>
+                <div id="logoarea" class="w3-container w3-flat-belize-hole">
+                        <img id="logo" src="images/logo.jpeg" alt="logo">
+                        <div id="name"><h3>IET LUCKNOW ROBOTIC'S CLUB</h3></div>
+                </div>
+                <div>   
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">   
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>   
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="navbar-nav">
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="home.html">Home</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="index.html">Announcements</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="achievements.html">Achievements</a></li>  
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="gallery.html">Gallery</a></li>
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="team.html">Team</a></li>  
+                                  <li class="nav-item w3-hover-red "><a class="nav-link" href="tools.html">Tools</a></li>
+                                  <li class="nav-item w3-hover-red w3-flat-belize-hole"><a class="nav-link" href="donate.html">Donate</a></li>
+                                </ul>
+                </div>  
+                </nav>
+                <a id="login" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> SignIn
+                </a>
+                <a id="register" class="w3-text-white nav-link" href="#"
+                onclick="document.getElementById('id01').style.display='block'">
+                <i class="fas fa-user" aria-hidden="true"></i> Register</a>
+                </div>
+                <div id="id01" class="modal">
+
+                                <form class="modal-content animate" action="/action_page.php">
+                                  <div class="imgcontainer">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <img src="images/333.svg" alt="Avatar" class="avatar">
+                                  </div>
+                              
+                                  <div class="container">
+                                    <label for="uname"><b>Username</b></label>
+                                    <input type="text" placeholder="Enter Username" name="uname" required>
+                              
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                                      
+                                    <button type="submit">Login</button>
+                                    <label>
+                                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                  </div>
+                              
+                                  <div class="container" style="background-color:#f1f1f1">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <span class="psw"><a href="#">Forgot password?</a></span>
+                                  </div>
+                                </form>
+                              </div>
+                              
+                              <script>
+                              // Get the modal
+                              var modal = document.getElementById('id01');
+                              
+                              // When the user clicks anywhere outside of the modal, close it
+                              window.onclick = function(event) {
+                                  if (event.target == modal) {
+                                      modal.style.display = "none";
+                                  }
+                              }
+                              </script>
+        </header>
+        <div class="teamcontent">
+        <div class="w3-navy-peony display-4 w3-center">Co-ordinators View</div>
+
+        </div>
+</body>
+
+</html>

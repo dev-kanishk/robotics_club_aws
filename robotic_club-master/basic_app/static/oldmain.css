@@ -1,0 +1,288 @@
+
+
+
+*{
+    margin:0 ;
+    padding: 0;
+    font-family: Century Gothic;
+}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/*#id_username{
+
+    width: 400px;
+    height: 40px;
+
+}
+@media only screen and (width:400){
+    #id_username{
+    width: 100px;
+    height:30px;
+
+}*/
+}
+header{
+    position:relative;
+    padding:0px;
+    background-color: #303438;
+    height: 60px;
+    box-shadow: 7px 7px 5px -2px grey;
+}
+footer{
+    height:50px;
+    background-color: #303438;
+}
+#rc{
+    position: absolute;
+    text-decoration: none;
+    text-shadow: 3px 3px 5px #92969b;
+    text-transform: uppercase;
+    color:white;
+    font-size:20px;
+    margin-left:55px;
+    margin-top:20px;
+}
+
+#logo{
+    position:absolute;
+    margin-top:10px;
+    margin-left:10px;
+    width:40px;
+}
+#ul1{ 
+    position :absolute;
+    padding:10px;
+    right:170px;
+    top:15px;
+    float: right;
+    list-style-type: none;
+}
+li {
+ display:inline-block;
+}
+#ul1 li a{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+    padding:3px;
+    font-size: 14px;
+    font-weight:bold;
+}
+#ul1 li a:hover{
+    text-decoration: none;
+    background-color: white;
+    color:rgb(128, 126, 126);
+    padding: 3px;
+    transition: 0.7s;
+}
+#register{
+    position:absolute;
+    right:10px;
+    top:15px;
+    text-decoration: none;
+}
+#login{
+    position:absolute;
+    right:95px;
+    top:15px;
+    text-decoration: none;
+}
+#login a{
+    font-size: 13px;
+    text-decoration: none;
+    color:grey;
+}
+#register a{
+    font-size: 13px;
+    text-decoration: none;
+    color:grey;
+}
+#login a:hover{
+    transition: 1;
+    font-weight: bolder;
+}
+#register a:hover{
+    transition: 1;
+    font-weight: bolder;
+}
+#active{
+    color:black !important; 
+    background-color: white;
+    border-radius: 10px;
+}
+#activa {
+    font-weight:bolder;
+}
+#regtext{
+    width:330px;
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    color: #303438;
+    font-size: 30px;
+    font-weight:bolder;
+    text-align:center;
+}
+#registration{
+    position: relative;
+    width:450px;
+    margin: auto;
+    margin-bottom:30px;
+    padding:20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color:white;
+    background-color: #303438;
+    border-radius: 10px;
+    box-shadow: 7px 7px 5px grey;
+}
+#loginf{
+    position:relative;
+    width:340px;
+    margin:auto;
+    margin-bottom:30px;
+    padding:20px;
+    text-align: center;
+    color:white;
+    background-color: #303438;
+    border-radius: 10px;
+    box-shadow: 7px 7px 5px grey;
+}
+#logint{
+    width:330px;
+    margin: auto;
+    margin-top:10px;
+    color: #303438;
+    font-size: 30px;
+    font-weight:bolder;
+    text-align:center;
+
+}
+#im1{
+    background-image: url(./images/im1.jpg);
+    margin-top:5px;
+    height:250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.5;
+    }
+#im2{
+    background-image: url(./images/im2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-position-y: -200px;
+    background-attachment: fixed;
+    height:200px;
+    opacity: 0.5;
+}
+#im3{
+    background-image: url(./images/im3.jpeg);
+    background-size: cover;
+    background-position-y: 100px;
+    background-attachment: fixed;
+    height:200px;
+    margin-bottom: 5px;
+    opacity: 0.5;
+}
+.text{
+    width:100%;
+    height:80px;
+    background-color: #b9b9b9
+    box-shadow: 0px 15px 7px -2px grey;
+}
+
+@media screen and (max-width:950px){
+    header{
+        position:relative;
+        padding:0px;
+        background-color: #303438;
+        height: 120px;
+    }
+    #ul1{ 
+        top:70px;
+        left:5px;
+    }
+}
+ @media screen and (max-width:720px){ 
+        header{
+            position:relative;
+            padding:0px;
+            background-color: #303438;
+            height: 260px;
+        }
+        #ul1{ 
+            position:absolute;
+            top:70px;
+            left:5px;
+            padding:5px;
+            float: left;
+        }
+        li {
+            display:block;
+            margin-top:5px;
+           }
+} 
+@media screen and (max-width:420px){ 
+    header{
+        height: 280px;
+    }
+    #ul1{ 
+        position:absolute;
+        top:100px;
+        right:15px;
+        left:5px;
+        padding:3px;
+        width:93%;
+    }
+    #login{
+        top:70px;
+        left:5px;
+        width:50%;
+        text-align: center;
+    }
+    #register{
+        top:70px;
+        right:5px;
+        width:50%;
+        text-align: center;
+    }
+    li {
+        text-align:center;
+        width:100%;
+        display:block;
+        margin-top:5px;
+       }
+ 
+    #rc{
+        margin-left:30%;
+    }
+    
+    #logo{
+        margin-left:15%;
+    }
+    #regtext{
+        width:100%;
+    }
+    #registration{
+        width:70%;
+    }
+    #loginf{
+        width:70%;
+    }
+    #logint{
+        width:100%;
+    }
+}
+
+.navbar-item{
+
+    float: left;
+}
