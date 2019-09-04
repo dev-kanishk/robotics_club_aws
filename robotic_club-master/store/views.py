@@ -204,7 +204,7 @@ def request_mentor(request):
             item.delete()
         print(recipients)
 
-        request_mail(recipients,request.user)
+#         request_mail(recipients,request.user)
 
 
         return render(request, "successful.html",{})
